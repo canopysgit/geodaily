@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO 每日监控 - 2026-06-21</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+           background: #f8fafc; color: #1f2937; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    .header { background: linear-gradient(135deg, #1e3a5f 0%, #2d5986 100%);
+              color: white; padding: 24px 32px; border-radius: 12px; margin-bottom: 0; }
+    .header h1 { font-size: 1.4em; margin-bottom: 4px; }
+    .header .sub { opacity: 0.85; font-size: 0.9em; }
+    .tabs { display: flex; gap: 0; background: white; border-radius: 0 0 12px 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.06); overflow-x: auto; }
+    .tab-btn { padding: 12px 24px; border: none; background: transparent; cursor: pointer;
+               font-size: 0.95em; font-weight: 600; color: #6b7280; white-space: nowrap;
+               border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .tab-btn:hover { color: #1e3a5f; background: #f8fafc; }
+    .tab-btn.active { color: #1e3a5f; border-bottom-color: #1e3a5f; }
+    .tab-content { margin-top: 20px; }
+    .section { background: white; border-radius: 12px; padding: 24px;
+               margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .section-title { font-size: 1.15em; font-weight: 700; color: #1e3a5f;
+                      margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
+    .metric-table { border-collapse: collapse; width: 100%; max-width: 700px; }
+    .metric-table th { background: #f1f5f9; padding: 10px 16px; font-weight: 600;
+                        text-align: center; font-size: 0.85em; }
+    .metric-table th:first-child { text-align: left; }
+    .metric-table td { padding: 10px 16px; border-bottom: 1px solid #f1f5f9;
+                        text-align: center; font-size: 0.95em; }
+    .metric-table td:first-child { text-align: left; font-weight: 600; color: #374151; }
+    .metric-table tr:last-child td { border-bottom: none; }
+    .matrix-wrap { overflow-x: auto; }
+    .matrix-table { border-collapse: collapse; width: 100%; }
+    .matrix-table th { background: #f1f5f9; padding: 10px 12px; font-weight: 600;
+                        white-space: nowrap; text-align: center; font-size: 0.85em; }
+    .matrix-table td { padding: 8px 12px; text-align: center; border-bottom: 1px solid #f1f5f9;
+                        font-size: 0.9em; }
+    .matrix-table td.label { text-align: left; font-weight: 600; }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 12px;
+           font-size: 0.78em; font-weight: 600; }
+    .tag-up { background: #d1fae5; color: #065f46; }
+    .tag-down { background: #fee2e2; color: #991b1b; }
+    .tag-flat { background: #f3f4f6; color: #6b7280; }
+    .kpi-delta { font-size: 0.8em; margin-top: 2px; }
+    .kpi-delta.up { color: #10b981; }
+    .kpi-delta.down { color: #ef4444; }
+    .kpi-delta.flat { color: #9ca3af; }
+    .footer { text-align: center; color: #9ca3af; font-size: 0.8em; margin-top: 24px; padding: 16px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>GEO 每日监控</h1>
+        <div class="sub">监测日期: 2026-06-21 | 生成时间: 2026-06-21 09:31</div>
+    </div>
+    <div class="tabs"><button class="tab-btn active" onclick="switchTab(0)">纽特舒玛</button> <button class="tab-btn " onclick="switchTab(1)">米兰软装</button> <button class="tab-btn " onclick="switchTab(2)">职卓科技</button> <button class="tab-btn " onclick="switchTab(3)">乐班</button> <button class="tab-btn " onclick="switchTab(4)">申新律所</button> <button class="tab-btn " onclick="switchTab(5)">ReeYee</button> <button class="tab-btn" onclick="switchTab(6)">发稿统计</button></div>
+    <div class="tab-content" id="tab-0" ><div class="section">
+        <div class="section-title">一、核心指标</div>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
+            <table class="metric-table">
+                <thead><tr><th>指标</th><th>2026-06-20</th><th>2026-06-21</th><th>变动</th></tr></thead>
+                <tbody><tr>
+                <td>品牌得分</td>
+                <td>49</td>
+                <td style="font-weight:700;color:#1e3a5f">48</td>
+                <td><span class="kpi-delta down">-1</span></td>
+            </tr><tr>
+                <td>品牌提及好感度</td>
+                <td>71分</td>
+                <td style="font-weight:700;color:#1e3a5f">70分</td>
+                <td><span class="kpi-delta down">-1</span></td>
+            </tr><tr>
+                <td>提及次数</td>
+                <td>62</td>
+                <td style="font-weight:700;color:#1e3a5f">52</td>
+                <td><span class="kpi-delta down">-10</span></td>
+            </tr><tr>
+                <td>平均提及排名</td>
+                <td>2.9</td>
+                <td style="font-weight:700;color:#1e3a5f">3.3</td>
+                <td><span class="kpi-delta down">+0.4</span></td>
+            </tr><tr>
+                <td>提及率</td>
+                <td>44%</td>
+                <td style="font-weight:700;color:#1e3a5f">44%</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr></tbody>
+            </table>
+            <div style="background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;padding:12px 16px;font-size:0.85em;color:#374151;line-height:1.7;white-space:nowrap">
+        <div style="font-weight:700;color:#065f46;margin-bottom:4px">📝 昨日发稿</div>
+        无发稿
+    </div>
+        </div>
+    </div><div class="section">
+        <div class="section-title">二、分平台提及率变化（变动 = 2026-06-21 vs 2026-06-20）</div>
+        <div class="matrix-wrap"><table class="matrix-table">
+            <thead><tr><th style="text-align:left">平台</th><th>2026-06-19</th><th>2026-06-20</th><th>2026-06-21</th><th>变动</th></tr></thead>
+            <tbody><tr><td class="label" style="color:#10b981">豆包网页</td><td style="background:rgba(16,185,129,0.5);font-weight:600">64%</td><td style="background:rgba(16,185,129,0.3);font-weight:600">43%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">57%</td><td><span class="tag tag-up">+14pp</span></td></tr><tr><td class="label" style="color:#10b981">豆包手机</td><td style="background:rgba(16,185,129,0.5);font-weight:600">64%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">71%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">64%</td><td><span class="tag tag-down">-7pp</span></td></tr><tr><td class="label" style="color:#3b82f6">DeepSeek网页</td><td style="background:rgba(16,185,129,0.3);font-weight:600">43%</td><td style="background:rgba(16,185,129,0.3);font-weight:600">43%</td><td style="background:rgba(16,185,129,0.3);font-weight:600">43%</td><td><span class="tag tag-flat">—</span></td></tr><tr><td class="label" style="color:#3b82f6">DeepSeek手机</td><td style="background:rgba(16,185,129,0.5);font-weight:600">50%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">57%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">50%</td><td><span class="tag tag-down">-7pp</span></td></tr><tr><td class="label" style="color:#f59e0b">千问手机</td><td style="background:rgba(239,68,68,0.5);font-weight:600">7%</td><td style="background:rgba(239,68,68,0.5);font-weight:600">7%</td><td style="background:rgba(239,68,68,0.5);font-weight:600">7%</td><td><span class="tag tag-flat">—</span></td></tr></tbody>
+        </table></div>
+    </div><div class="section">
+        <div class="section-title">三、竞品对比（2026-06-21）</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">品牌得分</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-20</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-21</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="48.571428571428584" width="28" height="171.42857142857142" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="43.571428571428584" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">48</text><rect x="52.0" y="45.0" width="28" height="175.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="41.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">49</text><rect x="207.0" y="52.14285714285714" width="28" height="167.85714285714286" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="221.0" y="47.14285714285714" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">47</text><rect x="178.0" y="48.571428571428584" width="28" height="171.42857142857142" fill="#93c5fd" rx="3" opacity="0.7"/><text x="192.0" y="44.571428571428584" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">48</text><rect x="333.0" y="77.14285714285714" width="28" height="142.85714285714286" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="347.0" y="72.14285714285714" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">40</text><rect x="304.0" y="87.85714285714286" width="28" height="132.14285714285714" fill="#93c5fd" rx="3" opacity="0.7"/><text x="318.0" y="83.85714285714286" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">37</text><rect x="459.0" y="105.71428571428572" width="28" height="114.28571428571428" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="473.0" y="100.71428571428572" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">32</text><rect x="430.0" y="84.28571428571428" width="28" height="135.71428571428572" fill="#93c5fd" rx="3" opacity="0.7"/><text x="444.0" y="80.28571428571428" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">38</text><rect x="585.0" y="123.57142857142858" width="28" height="96.42857142857142" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="599.0" y="118.57142857142858" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">27</text><rect x="556.0" y="109.28571428571428" width="28" height="110.71428571428572" fill="#93c5fd" rx="3" opacity="0.7"/><text x="570.0" y="105.28571428571428" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">31</text>
+            <text x="113.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">纽特舒玛 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text><text x="239.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">汤臣倍健</text><text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">维力维</text><text x="491.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">潘海威元</text><text x="617.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">雀巢</text>
+        </svg>
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">提及率</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-20</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-21</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="45.0" width="28" height="175.0" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="40.0" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">44%</text><rect x="52.0" y="45.0" width="28" height="175.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="41.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">44%</text><rect x="207.0" y="48.97727272727272" width="28" height="171.02272727272728" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="221.0" y="43.97727272727272" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">43%</text><rect x="178.0" y="48.97727272727272" width="28" height="171.02272727272728" fill="#93c5fd" rx="3" opacity="0.7"/><text x="192.0" y="44.97727272727272" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">43%</text><rect x="333.0" y="88.75" width="28" height="131.25" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="347.0" y="83.75" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">33%</text><rect x="304.0" y="104.65909090909092" width="28" height="115.34090909090908" fill="#93c5fd" rx="3" opacity="0.7"/><text x="318.0" y="100.65909090909092" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">29%</text><rect x="459.0" y="116.59090909090908" width="28" height="103.40909090909092" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="473.0" y="111.59090909090908" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">26%</text><rect x="430.0" y="96.70454545454545" width="28" height="123.29545454545455" fill="#93c5fd" rx="3" opacity="0.7"/><text x="444.0" y="92.70454545454545" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">31%</text><rect x="585.0" y="144.4318181818182" width="28" height="75.56818181818181" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="599.0" y="139.4318181818182" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">19%</text><rect x="556.0" y="128.52272727272728" width="28" height="91.47727272727272" fill="#93c5fd" rx="3" opacity="0.7"/><text x="570.0" y="124.52272727272728" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">23%</text>
+            <text x="113.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">纽特舒玛 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text><text x="239.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">汤臣倍健</text><text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">维力维</text><text x="491.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">潘海威元</text><text x="617.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">雀巢</text>
+        </svg>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e5e7eb">
+            <div style="font-size:0.9em;font-weight:600;color:#374151;margin-bottom:8px">平均提及排名（越小越好）</div>
+            <table style="width:100%;border-collapse:collapse"><tr><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fef3c7;color:#92400e;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">3.3</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">纽特舒玛 <span style="font-size:0.7em;background:#1e3a5f;color:white;padding:1px 4px;border-radius:3px;margin-left:4px">我方</span></div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fef3c7;color:#92400e;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">3.8</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">汤臣倍健</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">4.4</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">维力维</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">4.4</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">潘海威元</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fef3c7;color:#92400e;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">3.8</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">雀巢</div></td></tr></table>
+        </div>
+    </div></div><div class="tab-content" id="tab-1" style="display:none"><div class="section">
+        <div class="section-title">一、核心指标</div>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
+            <table class="metric-table">
+                <thead><tr><th>指标</th><th>2026-06-20</th><th>2026-06-21</th><th>变动</th></tr></thead>
+                <tbody><tr>
+                <td>品牌得分</td>
+                <td>66</td>
+                <td style="font-weight:700;color:#1e3a5f">68</td>
+                <td><span class="kpi-delta up">+2</span></td>
+            </tr><tr>
+                <td>品牌提及好感度</td>
+                <td>82分</td>
+                <td style="font-weight:700;color:#1e3a5f">82分</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及次数</td>
+                <td>66</td>
+                <td style="font-weight:700;color:#1e3a5f">66</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>平均提及排名</td>
+                <td>4.6</td>
+                <td style="font-weight:700;color:#1e3a5f">5.8</td>
+                <td><span class="kpi-delta down">+1.2</span></td>
+            </tr><tr>
+                <td>提及率</td>
+                <td>67%</td>
+                <td style="font-weight:700;color:#1e3a5f">71%</td>
+                <td><span class="kpi-delta up">+4pp</span></td>
+            </tr></tbody>
+            </table>
+            <div style="background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;padding:12px 16px;font-size:0.85em;color:#374151;line-height:1.7;white-space:nowrap">
+        <div style="font-weight:700;color:#065f46;margin-bottom:4px">📝 昨日发稿</div>
+        无发稿<br>本周 <b>104篇</b> 博客园 24、搜狐 17、搜狐号 16、网易 13、淘江湖 12、宜家居家装网 9、菏泽广电网 8、今日头条 8、咸宁新闻网 6、什么值得买 6、齐家网 5、手机新浪网 4、蓝色河畔 3、网易新闻客户端 1
+    </div>
+        </div>
+    </div><div class="section">
+        <div class="section-title">二、分平台提及率变化（变动 = 2026-06-21 vs 2026-06-20）</div>
+        <div class="matrix-wrap"><table class="matrix-table">
+            <thead><tr><th style="text-align:left">平台</th><th>2026-06-19</th><th>2026-06-20</th><th>2026-06-21</th><th>变动</th></tr></thead>
+            <tbody><tr><td class="label" style="color:#10b981">豆包网页</td><td style="background:rgba(16,185,129,0.5);font-weight:600">67%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">58%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">67%</td><td><span class="tag tag-up">+9pp</span></td></tr><tr><td class="label" style="color:#10b981">豆包手机</td><td style="background:rgba(16,185,129,0.3);font-weight:600">42%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">58%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">83%</td><td><span class="tag tag-up">+25pp</span></td></tr><tr><td class="label" style="color:#3b82f6">DeepSeek网页</td><td style="background:rgba(16,185,129,0.5);font-weight:600">67%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">83%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">58%</td><td><span class="tag tag-down">-25pp</span></td></tr><tr><td class="label" style="color:#3b82f6">DeepSeek手机</td><td style="background:rgba(16,185,129,0.5);font-weight:600">58%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">67%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">75%</td><td><span class="tag tag-up">+8pp</span></td></tr></tbody>
+        </table></div>
+    </div><div class="section">
+        <div class="section-title">三、竞品对比（2026-06-21）</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">品牌得分</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-20</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-21</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="74.8780487804878" width="28" height="145.1219512195122" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="69.8780487804878" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">68</text><rect x="52.0" y="79.14634146341461" width="28" height="140.85365853658539" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="75.14634146341461" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">66</text><rect x="207.0" y="55.67073170731709" width="28" height="164.3292682926829" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="221.0" y="50.67073170731709" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">77</text><rect x="178.0" y="45.0" width="28" height="175.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="192.0" y="41.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">82</text><rect x="333.0" y="70.60975609756099" width="28" height="149.390243902439" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="347.0" y="65.60975609756099" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">70</text><rect x="304.0" y="66.34146341463415" width="28" height="153.65853658536585" fill="#93c5fd" rx="3" opacity="0.7"/><text x="318.0" y="62.34146341463415" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">72</text><rect x="459.0" y="109.02439024390243" width="28" height="110.97560975609757" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="473.0" y="104.02439024390243" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">52</text><rect x="430.0" y="106.89024390243902" width="28" height="113.10975609756098" fill="#93c5fd" rx="3" opacity="0.7"/><text x="444.0" y="102.89024390243902" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">53</text><rect x="585.0" y="115.42682926829269" width="28" height="104.57317073170731" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="599.0" y="110.42682926829269" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">49</text>
+            <text x="113.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">米兰软装 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text><text x="239.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">天洋</text><text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">领绣</text><text x="491.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">柔然</text><text x="617.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">雅琪诺</text>
+        </svg>
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">提及率</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-20</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-21</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="78.80681818181819" width="28" height="141.1931818181818" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="73.80681818181819" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">71%</text><rect x="52.0" y="86.76136363636363" width="28" height="133.23863636363637" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="82.76136363636363" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">67%</text><rect x="207.0" y="54.94318181818181" width="28" height="165.0568181818182" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="221.0" y="49.94318181818181" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">83%</text><rect x="178.0" y="45.0" width="28" height="175.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="192.0" y="41.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">88%</text><rect x="333.0" y="74.82954545454544" width="28" height="145.17045454545456" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="347.0" y="69.82954545454544" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">73%</text><rect x="304.0" y="70.85227272727272" width="28" height="149.14772727272728" fill="#93c5fd" rx="3" opacity="0.7"/><text x="318.0" y="66.85227272727272" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">75%</text><rect x="459.0" y="116.59090909090908" width="28" height="103.40909090909092" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="473.0" y="111.59090909090908" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">52%</text><rect x="430.0" y="112.61363636363636" width="28" height="107.38636363636364" fill="#93c5fd" rx="3" opacity="0.7"/><text x="444.0" y="108.61363636363636" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">54%</text><rect x="585.0" y="124.54545454545455" width="28" height="95.45454545454545" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="599.0" y="119.54545454545455" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">48%</text>
+            <text x="113.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">米兰软装 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text><text x="239.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">天洋</text><text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">领绣</text><text x="491.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">柔然</text><text x="617.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">雅琪诺</text>
+        </svg>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e5e7eb">
+            <div style="font-size:0.9em;font-weight:600;color:#374151;margin-bottom:8px">平均提及排名（越小越好）</div>
+            <table style="width:100%;border-collapse:collapse"><tr><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">5.8</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">米兰软装 <span style="font-size:0.7em;background:#1e3a5f;color:white;padding:1px 4px;border-radius:3px;margin-left:4px">我方</span></div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">5.5</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">天洋</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">5.4</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">领绣</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">8.5</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">柔然</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">7.5</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">雅琪诺</div></td></tr></table>
+        </div>
+    </div></div><div class="tab-content" id="tab-2" style="display:none"><div class="section">
+        <div class="section-title">一、核心指标</div>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
+            <table class="metric-table">
+                <thead><tr><th>指标</th><th>2026-06-20</th><th>2026-06-21</th><th>变动</th></tr></thead>
+                <tbody><tr>
+                <td>品牌得分</td>
+                <td>46</td>
+                <td style="font-weight:700;color:#1e3a5f">50</td>
+                <td><span class="kpi-delta up">+4</span></td>
+            </tr><tr>
+                <td>品牌提及好感度</td>
+                <td>55分</td>
+                <td style="font-weight:700;color:#1e3a5f">58分</td>
+                <td><span class="kpi-delta up">+2</span></td>
+            </tr><tr>
+                <td>提及次数</td>
+                <td>27</td>
+                <td style="font-weight:700;color:#1e3a5f">34</td>
+                <td><span class="kpi-delta up">+7</span></td>
+            </tr><tr>
+                <td>平均提及排名</td>
+                <td>2.2</td>
+                <td style="font-weight:700;color:#1e3a5f">3.2</td>
+                <td><span class="kpi-delta down">+1.0</span></td>
+            </tr><tr>
+                <td>提及率</td>
+                <td>45%</td>
+                <td style="font-weight:700;color:#1e3a5f">50%</td>
+                <td><span class="kpi-delta up">+5pp</span></td>
+            </tr></tbody>
+            </table>
+            <div style="background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;padding:12px 16px;font-size:0.85em;color:#374151;line-height:1.7;white-space:nowrap">
+        <div style="font-weight:700;color:#065f46;margin-bottom:4px">📝 昨日发稿</div>
+        无发稿<br>本周 <b>38篇</b> cnblogs.com 16、未知 15、zkxww.com 4、sohu.com 2、没通过 1
+    </div>
+        </div>
+    </div><div class="section">
+        <div class="section-title">二、分平台提及率变化（变动 = 2026-06-21 vs 2026-06-20）</div>
+        <div class="matrix-wrap"><table class="matrix-table">
+            <thead><tr><th style="text-align:left">平台</th><th>2026-06-19</th><th>2026-06-20</th><th>2026-06-21</th><th>变动</th></tr></thead>
+            <tbody><tr><td class="label" style="color:#10b981">豆包网页</td><td style="background:rgba(16,185,129,0.5);font-weight:600">60%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">60%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">60%</td><td><span class="tag tag-flat">—</span></td></tr><tr><td class="label" style="color:#10b981">豆包手机</td><td style="background:rgba(16,185,129,0.5);font-weight:600">60%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">60%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">60%</td><td><span class="tag tag-flat">—</span></td></tr><tr><td class="label" style="color:#3b82f6">DeepSeek网页</td><td style="background:rgba(245,158,11,0.3);font-weight:600">20%</td><td style="background:rgba(16,185,129,0.3);font-weight:600">40%</td><td style="background:rgba(16,185,129,0.3);font-weight:600">40%</td><td><span class="tag tag-flat">—</span></td></tr><tr><td class="label" style="color:#3b82f6">DeepSeek手机</td><td style="background:rgba(16,185,129,0.3);font-weight:600">40%</td><td style="background:rgba(245,158,11,0.3);font-weight:600">20%</td><td style="background:rgba(16,185,129,0.3);font-weight:600">40%</td><td><span class="tag tag-up">+20pp</span></td></tr></tbody>
+        </table></div>
+    </div><div class="section">
+        <div class="section-title">三、竞品对比（2026-06-21）</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">品牌得分</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-20</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-21</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="45.0" width="28" height="175.0" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="40.0" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">50</text><rect x="52.0" y="59.0" width="28" height="161.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="55.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">46</text><rect x="207.0" y="90.5" width="28" height="129.5" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="221.0" y="85.5" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">37</text><rect x="178.0" y="94.0" width="28" height="126.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="192.0" y="90.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">36</text><rect x="333.0" y="104.5" width="28" height="115.5" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="347.0" y="99.5" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">33</text><rect x="304.0" y="76.5" width="28" height="143.5" fill="#93c5fd" rx="3" opacity="0.7"/><text x="318.0" y="72.5" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">41</text><rect x="459.0" y="108.0" width="28" height="112.0" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="473.0" y="103.0" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">32</text><rect x="585.0" y="121.99999999999999" width="28" height="98.00000000000001" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="599.0" y="116.99999999999999" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">28</text>
+            <text x="113.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">职卓科技 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text><text x="239.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">Kaggle</text><text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">DBC职梦</text><text x="491.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">探潜数据分析</text><text x="617.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">阿里巴巴</text>
+        </svg>
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">提及率</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-20</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-21</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="45.0" width="28" height="175.0" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="40.0" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">50%</text><rect x="52.0" y="62.5" width="28" height="157.5" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="58.5" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">45%</text><rect x="207.0" y="132.5" width="28" height="87.5" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="221.0" y="127.5" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">25%</text><rect x="178.0" y="115.0" width="28" height="105.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="192.0" y="111.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">30%</text><rect x="333.0" y="150.0" width="28" height="70.0" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="347.0" y="145.0" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">20%</text><rect x="304.0" y="80.0" width="28" height="140.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="318.0" y="76.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">40%</text><rect x="459.0" y="132.5" width="28" height="87.5" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="473.0" y="127.5" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">25%</text><rect x="585.0" y="132.5" width="28" height="87.5" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="599.0" y="127.5" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">25%</text>
+            <text x="113.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">职卓科技 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text><text x="239.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">Kaggle</text><text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">DBC职梦</text><text x="491.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">探潜数据分析</text><text x="617.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">阿里巴巴</text>
+        </svg>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e5e7eb">
+            <div style="font-size:0.9em;font-weight:600;color:#374151;margin-bottom:8px">平均提及排名（越小越好）</div>
+            <table style="width:100%;border-collapse:collapse"><tr><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fef3c7;color:#92400e;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">3.2</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">职卓科技 <span style="font-size:0.7em;background:#1e3a5f;color:white;padding:1px 4px;border-radius:3px;margin-left:4px">我方</span></div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#d1fae5;color:#065f46;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">1.2</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">Kaggle</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#d1fae5;color:#065f46;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">1.0</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">DBC职梦</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fef3c7;color:#92400e;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">3.6</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">探潜数据分析</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fef3c7;color:#92400e;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">2.6</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">阿里巴巴</div></td></tr></table>
+        </div>
+    </div></div><div class="tab-content" id="tab-3" style="display:none"><div class="section">
+        <div class="section-title">一、核心指标</div>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
+            <table class="metric-table">
+                <thead><tr><th>指标</th><th>2026-06-20</th><th>2026-06-21</th><th>变动</th></tr></thead>
+                <tbody><tr>
+                <td>品牌得分</td>
+                <td>93</td>
+                <td style="font-weight:700;color:#1e3a5f">85</td>
+                <td><span class="kpi-delta down">-8</span></td>
+            </tr><tr>
+                <td>品牌提及好感度</td>
+                <td>95分</td>
+                <td style="font-weight:700;color:#1e3a5f">93分</td>
+                <td><span class="kpi-delta down">-1</span></td>
+            </tr><tr>
+                <td>提及次数</td>
+                <td>74</td>
+                <td style="font-weight:700;color:#1e3a5f">59</td>
+                <td><span class="kpi-delta down">-15</span></td>
+            </tr><tr>
+                <td>平均提及排名</td>
+                <td>1.6</td>
+                <td style="font-weight:700;color:#1e3a5f">1.7</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及率</td>
+                <td>97%</td>
+                <td style="font-weight:700;color:#1e3a5f">88%</td>
+                <td><span class="kpi-delta down">-9pp</span></td>
+            </tr></tbody>
+            </table>
+            <div style="background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;padding:12px 16px;font-size:0.85em;color:#374151;line-height:1.7;white-space:nowrap">
+        <div style="font-weight:700;color:#065f46;margin-bottom:4px">📝 昨日发稿</div>
+        无发稿
+    </div>
+        </div>
+    </div><div class="section">
+        <div class="section-title">二、分平台提及率变化（变动 = 2026-06-21 vs 2026-06-20）</div>
+        <div class="matrix-wrap"><table class="matrix-table">
+            <thead><tr><th style="text-align:left">平台</th><th>2026-06-19</th><th>2026-06-20</th><th>2026-06-21</th><th>变动</th></tr></thead>
+            <tbody><tr><td class="label" style="color:#10b981">豆包网页</td><td style="background:rgba(16,185,129,0.7);font-weight:600">88%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">88%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">88%</td><td><span class="tag tag-flat">—</span></td></tr><tr><td class="label" style="color:#10b981">豆包手机</td><td style="background:rgba(16,185,129,0.7);font-weight:600">100%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">100%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">75%</td><td><span class="tag tag-down">-25pp</span></td></tr><tr><td class="label" style="color:#3b82f6">DeepSeek网页</td><td style="background:rgba(16,185,129,0.7);font-weight:600">88%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">100%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">100%</td><td><span class="tag tag-flat">—</span></td></tr><tr><td class="label" style="color:#3b82f6">DeepSeek手机</td><td style="background:rgba(16,185,129,0.5);font-weight:600">63%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">100%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">88%</td><td><span class="tag tag-down">-12pp</span></td></tr></tbody>
+        </table></div>
+    </div><div class="section">
+        <div class="section-title">三、竞品对比（2026-06-21）</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">品牌得分</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-20</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-21</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="60.05376344086022" width="28" height="159.94623655913978" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="55.05376344086022" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">85</text><rect x="52.0" y="45.0" width="28" height="175.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="41.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">93</text><rect x="207.0" y="105.21505376344086" width="28" height="114.78494623655914" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="221.0" y="100.21505376344086" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">61</text><rect x="178.0" y="108.97849462365592" width="28" height="111.02150537634408" fill="#93c5fd" rx="3" opacity="0.7"/><text x="192.0" y="104.97849462365592" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">59</text><rect x="333.0" y="150.3763440860215" width="28" height="69.6236559139785" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="347.0" y="145.3763440860215" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">37</text><rect x="304.0" y="139.08602150537635" width="28" height="80.91397849462365" fill="#93c5fd" rx="3" opacity="0.7"/><text x="318.0" y="135.08602150537635" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">43</text><rect x="459.0" y="161.66666666666669" width="28" height="58.33333333333333" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="473.0" y="156.66666666666669" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">31</text><rect x="430.0" y="157.90322580645162" width="28" height="62.09677419354839" fill="#93c5fd" rx="3" opacity="0.7"/><text x="444.0" y="153.90322580645162" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">33</text><rect x="585.0" y="163.5483870967742" width="28" height="56.45161290322581" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="599.0" y="158.5483870967742" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">30</text>
+            <text x="113.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">乐班 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text><text x="239.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">米乔</text><text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">佳奥</text><text x="491.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">诺泰</text><text x="617.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">舒芙</text>
+        </svg>
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">提及率</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-20</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-21</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="61.23711340206185" width="28" height="158.76288659793815" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="56.23711340206185" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">88%</text><rect x="52.0" y="45.0" width="28" height="175.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="41.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">97%</text><rect x="207.0" y="106.34020618556701" width="28" height="113.65979381443299" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="221.0" y="101.34020618556701" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">63%</text><rect x="178.0" y="113.55670103092784" width="28" height="106.44329896907216" fill="#93c5fd" rx="3" opacity="0.7"/><text x="192.0" y="109.55670103092784" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">59%</text><rect x="333.0" y="158.659793814433" width="28" height="61.340206185567006" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="347.0" y="153.659793814433" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">34%</text><rect x="304.0" y="146.03092783505156" width="28" height="73.96907216494846" fill="#93c5fd" rx="3" opacity="0.7"/><text x="318.0" y="142.03092783505156" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">41%</text><rect x="459.0" y="169.48453608247422" width="28" height="50.51546391752578" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="473.0" y="164.48453608247422" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">28%</text><rect x="430.0" y="169.48453608247422" width="28" height="50.51546391752578" fill="#93c5fd" rx="3" opacity="0.7"/><text x="444.0" y="165.48453608247422" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">28%</text><rect x="585.0" y="174.89690721649487" width="28" height="45.10309278350515" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="599.0" y="169.89690721649487" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">25%</text>
+            <text x="113.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">乐班 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text><text x="239.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">米乔</text><text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">佳奥</text><text x="491.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">诺泰</text><text x="617.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">舒芙</text>
+        </svg>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e5e7eb">
+            <div style="font-size:0.9em;font-weight:600;color:#374151;margin-bottom:8px">平均提及排名（越小越好）</div>
+            <table style="width:100%;border-collapse:collapse"><tr><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#d1fae5;color:#065f46;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">1.7</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">乐班 <span style="font-size:0.7em;background:#1e3a5f;color:white;padding:1px 4px;border-radius:3px;margin-left:4px">我方</span></div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fef3c7;color:#92400e;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">4.0</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">米乔</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">4.2</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">佳奥</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">5.7</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">诺泰</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">8.4</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">舒芙</div></td></tr></table>
+        </div>
+    </div></div><div class="tab-content" id="tab-4" style="display:none"><div class="section">
+        <div class="section-title">一、核心指标</div>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
+            <table class="metric-table">
+                <thead><tr><th>指标</th><th>2026-06-20</th><th>2026-06-21</th><th>变动</th></tr></thead>
+                <tbody><tr>
+                <td>品牌得分</td>
+                <td>29</td>
+                <td style="font-weight:700;color:#1e3a5f">29</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>品牌提及好感度</td>
+                <td>62分</td>
+                <td style="font-weight:700;color:#1e3a5f">62分</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及次数</td>
+                <td>7</td>
+                <td style="font-weight:700;color:#1e3a5f">7</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>平均提及排名</td>
+                <td>4.2</td>
+                <td style="font-weight:700;color:#1e3a5f">4.8</td>
+                <td><span class="kpi-delta down">+0.6</span></td>
+            </tr><tr>
+                <td>提及率</td>
+                <td>25%</td>
+                <td style="font-weight:700;color:#1e3a5f">25%</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr></tbody>
+            </table>
+            <div style="background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;padding:12px 16px;font-size:0.85em;color:#374151;line-height:1.7;white-space:nowrap">
+        <div style="font-weight:700;color:#065f46;margin-bottom:4px">📝 昨日发稿</div>
+        无发稿
+    </div>
+        </div>
+    </div><div class="section">
+        <div class="section-title">二、分平台提及率变化（变动 = 2026-06-21 vs 2026-06-20）</div>
+        <div class="matrix-wrap"><table class="matrix-table">
+            <thead><tr><th style="text-align:left">平台</th><th>2026-06-19</th><th>2026-06-20</th><th>2026-06-21</th><th>变动</th></tr></thead>
+            <tbody><tr><td class="label" style="color:#10b981">豆包网页</td><td style="background:rgba(16,185,129,0.5);font-weight:600">60%</td><td style="background:rgba(16,185,129,0.3);font-weight:600">40%</td><td style="background:rgba(16,185,129,0.3);font-weight:600">40%</td><td><span class="tag tag-flat">—</span></td></tr><tr><td class="label" style="color:#10b981">豆包手机</td><td style="background:rgba(16,185,129,0.3);font-weight:600">40%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">60%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">60%</td><td><span class="tag tag-flat">—</span></td></tr><tr><td class="label" style="color:#3b82f6">DeepSeek网页</td><td style="background:rgba(245,158,11,0.3);font-weight:600">20%</td><td style="background:rgba(239,68,68,0.7);font-weight:600">0%</td><td style="background:rgba(239,68,68,0.7);font-weight:600">0%</td><td><span class="tag tag-flat">—</span></td></tr><tr><td class="label" style="color:#3b82f6">DeepSeek手机</td><td style="background:rgba(239,68,68,0.7);font-weight:600">0%</td><td style="background:rgba(239,68,68,0.7);font-weight:600">0%</td><td style="background:rgba(239,68,68,0.7);font-weight:600">0%</td><td><span class="tag tag-flat">—</span></td></tr></tbody>
+        </table></div>
+    </div><div class="section">
+        <div class="section-title">三、竞品对比（2026-06-21）</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">品牌得分</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-20</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-21</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="82.83783783783784" width="28" height="137.16216216216216" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="77.83783783783784" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">29</text><rect x="52.0" y="82.83783783783784" width="28" height="137.16216216216216" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="78.83783783783784" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">29</text><rect x="207.0" y="49.72972972972971" width="28" height="170.2702702702703" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="221.0" y="44.72972972972971" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">36</text><rect x="178.0" y="45.0" width="28" height="175.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="192.0" y="41.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">37</text><rect x="333.0" y="82.83783783783784" width="28" height="137.16216216216216" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="347.0" y="77.83783783783784" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">29</text><rect x="304.0" y="101.75675675675676" width="28" height="118.24324324324324" fill="#93c5fd" rx="3" opacity="0.7"/><text x="318.0" y="97.75675675675676" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">25</text><rect x="459.0" y="87.56756756756755" width="28" height="132.43243243243245" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="473.0" y="82.56756756756755" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">28</text><rect x="585.0" y="92.2972972972973" width="28" height="127.7027027027027" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="599.0" y="87.2972972972973" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">27</text>
+            <text x="113.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">申新律所 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text><text x="239.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">锦天城</text><text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">汉坤律师事务所</text><text x="491.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">上海汉盛律师事务所</text><text x="617.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">上海弼兴律师事务所</text>
+        </svg>
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">提及率</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-20</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-21</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="95.0" width="28" height="125.0" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="90.0" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">25%</text><rect x="52.0" y="95.0" width="28" height="125.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="91.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">25%</text><rect x="207.0" y="45.0" width="28" height="175.0" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="221.0" y="40.0" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">35%</text><rect x="178.0" y="45.0" width="28" height="175.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="192.0" y="41.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">35%</text><rect x="333.0" y="120.0" width="28" height="100.0" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="347.0" y="115.0" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">20%</text><rect x="304.0" y="120.0" width="28" height="100.0" fill="#93c5fd" rx="3" opacity="0.7"/><text x="318.0" y="116.0" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">20%</text><rect x="459.0" y="145.0" width="28" height="75.0" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="473.0" y="140.0" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">15%</text><rect x="585.0" y="145.0" width="28" height="75.0" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="599.0" y="140.0" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">15%</text>
+            <text x="113.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">申新律所 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text><text x="239.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">锦天城</text><text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">汉坤律师事务所</text><text x="491.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">上海汉盛律师事务所</text><text x="617.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">上海弼兴律师事务所</text>
+        </svg>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e5e7eb">
+            <div style="font-size:0.9em;font-weight:600;color:#374151;margin-bottom:8px">平均提及排名（越小越好）</div>
+            <table style="width:100%;border-collapse:collapse"><tr><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">4.8</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">申新律所 <span style="font-size:0.7em;background:#1e3a5f;color:white;padding:1px 4px;border-radius:3px;margin-left:4px">我方</span></div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">7.7</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">锦天城</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#d1fae5;color:#065f46;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">1.3</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">汉坤律师事务所</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#d1fae5;color:#065f46;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">1.3</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">上海汉盛律师事务所</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#d1fae5;color:#065f46;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">1.0</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">上海弼兴律师事务所</div></td></tr></table>
+        </div>
+    </div></div><div class="tab-content" id="tab-5" style="display:none"><div class="section">
+        <div class="section-title">一、核心指标</div>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
+            <table class="metric-table">
+                <thead><tr><th>指标</th><th>2026-06-20</th><th>2026-06-21</th><th>变动</th></tr></thead>
+                <tbody><tr>
+                <td>品牌得分</td>
+                <td>65</td>
+                <td style="font-weight:700;color:#1e3a5f">89</td>
+                <td><span class="kpi-delta up">+24</span></td>
+            </tr><tr>
+                <td>品牌提及好感度</td>
+                <td>81分</td>
+                <td style="font-weight:700;color:#1e3a5f">81分</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及次数</td>
+                <td>34</td>
+                <td style="font-weight:700;color:#1e3a5f">51</td>
+                <td><span class="kpi-delta up">+17</span></td>
+            </tr><tr>
+                <td>平均提及排名</td>
+                <td>1.8</td>
+                <td style="font-weight:700;color:#1e3a5f">2.1</td>
+                <td><span class="kpi-delta down">+0.3</span></td>
+            </tr><tr>
+                <td>提及率</td>
+                <td>63%</td>
+                <td style="font-weight:700;color:#1e3a5f">100%</td>
+                <td><span class="kpi-delta up">+37pp</span></td>
+            </tr></tbody>
+            </table>
+            <div style="background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;padding:12px 16px;font-size:0.85em;color:#374151;line-height:1.7;white-space:nowrap">
+        <div style="font-weight:700;color:#065f46;margin-bottom:4px">📝 昨日发稿</div>
+        无发稿<br>本周 <b>90篇</b> 搜狐号 36、什么值得买 34、未知 20
+    </div>
+        </div>
+    </div><div class="section">
+        <div class="section-title">二、分平台提及率变化（变动 = 2026-06-21 vs 2026-06-20）</div>
+        <div class="matrix-wrap"><table class="matrix-table">
+            <thead><tr><th style="text-align:left">平台</th><th>2026-06-19</th><th>2026-06-20</th><th>2026-06-21</th><th>变动</th></tr></thead>
+            <tbody><tr><td class="label" style="color:#10b981">豆包网页</td><td style="background:rgba(16,185,129,0.5);font-weight:600">50%</td><td style="background:rgba(16,185,129,0.5);font-weight:600">50%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">100%</td><td><span class="tag tag-up">+50pp</span></td></tr><tr><td class="label" style="color:#10b981">豆包手机</td><td style="background:rgba(16,185,129,0.5);font-weight:600">50%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">75%</td><td style="background:rgba(16,185,129,0.7);font-weight:600">100%</td><td><span class="tag tag-up">+25pp</span></td></tr></tbody>
+        </table></div>
+    </div><div class="section">
+        <div class="section-title">三、竞品对比（2026-06-21）</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">品牌得分</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-20</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-21</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="45.0" width="28" height="175.0" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="40.0" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">89</text><rect x="52.0" y="92.19101123595506" width="28" height="127.80898876404494" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="88.19101123595506" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">65</text><rect x="207.0" y="123.65168539325842" width="28" height="96.34831460674158" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="221.0" y="118.65168539325842" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">49</text><rect x="178.0" y="145.28089887640448" width="28" height="74.71910112359551" fill="#93c5fd" rx="3" opacity="0.7"/><text x="192.0" y="141.28089887640448" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">38</text><rect x="333.0" y="147.24719101123594" width="28" height="72.75280898876404" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="347.0" y="142.24719101123594" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">37</text><rect x="304.0" y="157.07865168539325" width="28" height="62.92134831460674" fill="#93c5fd" rx="3" opacity="0.7"/><text x="318.0" y="153.07865168539325" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">32</text><rect x="459.0" y="159.04494382022472" width="28" height="60.95505617977528" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="473.0" y="154.04494382022472" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">31</text><rect x="430.0" y="129.5505617977528" width="28" height="90.4494382022472" fill="#93c5fd" rx="3" opacity="0.7"/><text x="444.0" y="125.5505617977528" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">46</text><rect x="585.0" y="162.97752808988764" width="28" height="57.022471910112365" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="599.0" y="157.97752808988764" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">29</text>
+            <text x="113.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">ReeYee <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text><text x="239.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">地平线8号</text><text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">途明</text><text x="491.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">新秀丽</text><text x="617.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">POLO</text>
+        </svg>
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">提及率</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-20</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-21</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="45.0" width="28" height="175.0" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="40.0" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">100%</text><rect x="52.0" y="109.75" width="28" height="110.25" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="105.75" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">63%</text><rect x="207.0" y="132.5" width="28" height="87.5" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="221.0" y="127.5" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">50%</text><rect x="178.0" y="153.5" width="28" height="66.5" fill="#93c5fd" rx="3" opacity="0.7"/><text x="192.0" y="149.5" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">38%</text><rect x="333.0" y="153.5" width="28" height="66.5" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="347.0" y="148.5" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">38%</text><rect x="304.0" y="153.5" width="28" height="66.5" fill="#93c5fd" rx="3" opacity="0.7"/><text x="318.0" y="149.5" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">38%</text><rect x="459.0" y="176.25" width="28" height="43.75" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="473.0" y="171.25" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">25%</text><rect x="430.0" y="132.5" width="28" height="87.5" fill="#93c5fd" rx="3" opacity="0.7"/><text x="444.0" y="128.5" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">50%</text><rect x="585.0" y="176.25" width="28" height="43.75" fill="#1e3a5f" rx="3" opacity="0.85"/><text x="599.0" y="171.25" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">25%</text>
+            <text x="113.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">ReeYee <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text><text x="239.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">地平线8号</text><text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">途明</text><text x="491.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">新秀丽</text><text x="617.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">POLO</text>
+        </svg>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e5e7eb">
+            <div style="font-size:0.9em;font-weight:600;color:#374151;margin-bottom:8px">平均提及排名（越小越好）</div>
+            <table style="width:100%;border-collapse:collapse"><tr><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fef3c7;color:#92400e;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">2.1</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">ReeYee <span style="font-size:0.7em;background:#1e3a5f;color:white;padding:1px 4px;border-radius:3px;margin-left:4px">我方</span></div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">4.5</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">地平线8号</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fef3c7;color:#92400e;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">3.7</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">途明</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fef3c7;color:#92400e;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">3.5</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">新秀丽</div></td><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#fee2e2;color:#991b1b;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">5.5</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">POLO</div></td></tr></table>
+        </div>
+    </div></div><div class="tab-content" id="tab-6" style="display:none"><div class="section">
+        <div class="section-title">📝 发稿统计（2026-06-21）</div>
+        <div class="matrix-wrap"><table class="matrix-table" style="table-layout:fixed;width:100%">
+            <colgroup>
+                <col style="width:10%">
+                <col style="width:6%">
+                <col style="width:32%">
+                <col style="width:6%">
+                <col style="width:46%">
+            </colgroup>
+            <thead><tr>
+                <th style="text-align:left">项目</th>
+                <th>昨日</th>
+                <th style="text-align:left">昨日媒体</th>
+                <th>累计</th>
+                <th style="text-align:left">本周媒体</th>
+            </tr></thead>
+            <tbody><tr>
+            <td style="font-weight:600;white-space:nowrap">纽特舒玛</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">0</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">—</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">米兰软装</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">104</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">博客园(24)、搜狐(17)、搜狐号(16)、网易(13)、淘江湖(12)、宜家居家装网(9)、菏泽广电网(8)、今日头条(8)、咸宁新闻网(6)、什么值得买(6)、齐家网(5)、手机新浪网(4)、蓝色河畔(3)、网易新闻客户端(1)</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">职卓科技</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">38</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">cnblogs.com(16)、未知(15)、zkxww.com(4)、sohu.com(2)、没通过(1)</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">乐班二期</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">0</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">—</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">申新律所</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">0</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">—</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">黑奥秘</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">0</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">—</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">美团-黑奥秘</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">0</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">—</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">美团安心学</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">0</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">—</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">ReeYee</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">90</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">搜狐号(36)、什么值得买(34)、未知(20)</td>
+        </tr></tbody>
+        </table></div>
+    </div></div>
+    <div class="footer">Generated by GEO Daily Monitor · 爱搜</div>
+</div>
+<script>
+function switchTab(idx) {
+    document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+    document.querySelectorAll('.tab-content').forEach((c, i) => c.style.display = i === idx ? 'block' : 'none');
+}
+</script>
+</body>
+</html>

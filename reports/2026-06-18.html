@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO 每日监控 - 2026-06-18</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+           background: #f8fafc; color: #1f2937; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    .header { background: linear-gradient(135deg, #1e3a5f 0%, #2d5986 100%);
+              color: white; padding: 24px 32px; border-radius: 12px; margin-bottom: 0; }
+    .header h1 { font-size: 1.4em; margin-bottom: 4px; }
+    .header .sub { opacity: 0.85; font-size: 0.9em; }
+    .tabs { display: flex; gap: 0; background: white; border-radius: 0 0 12px 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.06); overflow-x: auto; }
+    .tab-btn { padding: 12px 24px; border: none; background: transparent; cursor: pointer;
+               font-size: 0.95em; font-weight: 600; color: #6b7280; white-space: nowrap;
+               border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .tab-btn:hover { color: #1e3a5f; background: #f8fafc; }
+    .tab-btn.active { color: #1e3a5f; border-bottom-color: #1e3a5f; }
+    .tab-content { margin-top: 20px; }
+    .section { background: white; border-radius: 12px; padding: 24px;
+               margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .section-title { font-size: 1.15em; font-weight: 700; color: #1e3a5f;
+                      margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
+    .metric-table { border-collapse: collapse; width: 100%; max-width: 700px; }
+    .metric-table th { background: #f1f5f9; padding: 10px 16px; font-weight: 600;
+                        text-align: center; font-size: 0.85em; }
+    .metric-table th:first-child { text-align: left; }
+    .metric-table td { padding: 10px 16px; border-bottom: 1px solid #f1f5f9;
+                        text-align: center; font-size: 0.95em; }
+    .metric-table td:first-child { text-align: left; font-weight: 600; color: #374151; }
+    .metric-table tr:last-child td { border-bottom: none; }
+    .matrix-wrap { overflow-x: auto; }
+    .matrix-table { border-collapse: collapse; width: 100%; }
+    .matrix-table th { background: #f1f5f9; padding: 10px 12px; font-weight: 600;
+                        white-space: nowrap; text-align: center; font-size: 0.85em; }
+    .matrix-table td { padding: 8px 12px; text-align: center; border-bottom: 1px solid #f1f5f9;
+                        font-size: 0.9em; }
+    .matrix-table td.label { text-align: left; font-weight: 600; }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 12px;
+           font-size: 0.78em; font-weight: 600; }
+    .tag-up { background: #d1fae5; color: #065f46; }
+    .tag-down { background: #fee2e2; color: #991b1b; }
+    .tag-flat { background: #f3f4f6; color: #6b7280; }
+    .kpi-delta { font-size: 0.8em; margin-top: 2px; }
+    .kpi-delta.up { color: #10b981; }
+    .kpi-delta.down { color: #ef4444; }
+    .kpi-delta.flat { color: #9ca3af; }
+    .footer { text-align: center; color: #9ca3af; font-size: 0.8em; margin-top: 24px; padding: 16px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>GEO 每日监控</h1>
+        <div class="sub">监测日期: 2026-06-18 | 生成时间: 2026-06-18 09:30</div>
+    </div>
+    <div class="tabs"><button class="tab-btn active" onclick="switchTab(0)">⚠️ 纽特舒玛</button> <button class="tab-btn " onclick="switchTab(1)">⚠️ 米兰软装</button> <button class="tab-btn " onclick="switchTab(2)">⚠️ 职卓科技</button> <button class="tab-btn " onclick="switchTab(3)">⚠️ 乐班</button> <button class="tab-btn " onclick="switchTab(4)">⚠️ 申新律所</button> <button class="tab-btn " onclick="switchTab(5)">⚠️ ReeYee</button> <button class="tab-btn" onclick="switchTab(6)">发稿统计</button></div>
+    <div class="tab-content" id="tab-0" ><div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:16px 20px;margin-bottom:16px">
+                <div style="font-weight:700;color:#92400e;font-size:1.05em">⚠️ 数据未就绪</div>
+                <div style="color:#78350f;font-size:0.9em;margin-top:4px">该项目今日监测数据为空，可能API尚未更新。请稍后刷新或手动检查。</div>
+            </div><div class="section">
+        <div class="section-title">一、核心指标</div>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
+            <table class="metric-table">
+                <thead><tr><th>指标</th><th>2026-06-17</th><th>2026-06-18</th><th>变动</th></tr></thead>
+                <tbody><tr>
+                <td>品牌得分</td>
+                <td>0</td>
+                <td style="font-weight:700;color:#1e3a5f">0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>品牌提及好感度</td>
+                <td>0分</td>
+                <td style="font-weight:700;color:#1e3a5f">0分</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及次数</td>
+                <td>0</td>
+                <td style="font-weight:700;color:#1e3a5f">0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>平均提及排名</td>
+                <td>0.0</td>
+                <td style="font-weight:700;color:#1e3a5f">0.0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及率</td>
+                <td>0.0%</td>
+                <td style="font-weight:700;color:#1e3a5f">0.0%</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr></tbody>
+            </table>
+            <div style="background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;padding:12px 16px;font-size:0.85em;color:#374151;line-height:1.7;white-space:nowrap">
+        <div style="font-weight:700;color:#065f46;margin-bottom:4px">📝 昨日发稿</div>
+        无发稿
+    </div>
+        </div>
+    </div><div class="section">
+        <div class="section-title">二、分平台提及率变化（变动 = 2026-06-18 vs 2026-06-17）</div>
+        <div class="matrix-wrap"><table class="matrix-table">
+            <thead><tr><th style="text-align:left">平台</th><th>2026-06-16</th><th>2026-06-17</th><th>2026-06-18</th><th>变动</th></tr></thead>
+            <tbody></tbody>
+        </table></div>
+    </div><div class="section">
+        <div class="section-title">三、竞品对比（2026-06-18）</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">品牌得分</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-17</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-18</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="218" width="28" height="2" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="213" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">0</text><rect x="52.0" y="218" width="28" height="2" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="214" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">0</text>
+            <text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">纽特舒玛 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text>
+        </svg>
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">提及率</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-17</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-18</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="218" width="28" height="2" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="213" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">0%</text><rect x="52.0" y="218" width="28" height="2" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="214" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">0%</text>
+            <text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">纽特舒玛 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text>
+        </svg>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e5e7eb">
+            <div style="font-size:0.9em;font-weight:600;color:#374151;margin-bottom:8px">平均提及排名（越小越好）</div>
+            <table style="width:100%;border-collapse:collapse"><tr><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#d1fae5;color:#065f46;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">0.0</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">纽特舒玛 <span style="font-size:0.7em;background:#1e3a5f;color:white;padding:1px 4px;border-radius:3px;margin-left:4px">我方</span></div></td></tr></table>
+        </div>
+    </div></div><div class="tab-content" id="tab-1" style="display:none"><div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:16px 20px;margin-bottom:16px">
+                <div style="font-weight:700;color:#92400e;font-size:1.05em">⚠️ 数据未就绪</div>
+                <div style="color:#78350f;font-size:0.9em;margin-top:4px">该项目今日监测数据为空，可能API尚未更新。请稍后刷新或手动检查。</div>
+            </div><div class="section">
+        <div class="section-title">一、核心指标</div>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
+            <table class="metric-table">
+                <thead><tr><th>指标</th><th>2026-06-17</th><th>2026-06-18</th><th>变动</th></tr></thead>
+                <tbody><tr>
+                <td>品牌得分</td>
+                <td>0</td>
+                <td style="font-weight:700;color:#1e3a5f">0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>品牌提及好感度</td>
+                <td>0分</td>
+                <td style="font-weight:700;color:#1e3a5f">0分</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及次数</td>
+                <td>0</td>
+                <td style="font-weight:700;color:#1e3a5f">0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>平均提及排名</td>
+                <td>0.0</td>
+                <td style="font-weight:700;color:#1e3a5f">0.0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及率</td>
+                <td>0.0%</td>
+                <td style="font-weight:700;color:#1e3a5f">0.0%</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr></tbody>
+            </table>
+            <div style="background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;padding:12px 16px;font-size:0.85em;color:#374151;line-height:1.7;white-space:nowrap">
+        <div style="font-weight:700;color:#065f46;margin-bottom:4px">📝 昨日发稿</div>
+        <b>27篇</b> 淘江湖 7、博客园 6、搜狐 5、网易 4、宜家居家装网 4、齐家网 3、什么值得买 3、菏泽广电网 2、今日头条 2、网易新闻客户端 1、蓝色河畔 1<br>本周 <b>73篇</b> 搜狐号 16、搜狐 16、网易 13、博客园 10、淘江湖 7、咸宁新闻网 6、宜家居家装网 4、齐家网 3、什么值得买 3、菏泽广电网 2、今日头条 2、网易新闻客户端 1、蓝色河畔 1
+    </div>
+        </div>
+    </div><div class="section">
+        <div class="section-title">二、分平台提及率变化（变动 = 2026-06-18 vs 2026-06-17）</div>
+        <div class="matrix-wrap"><table class="matrix-table">
+            <thead><tr><th style="text-align:left">平台</th><th>2026-06-16</th><th>2026-06-17</th><th>2026-06-18</th><th>变动</th></tr></thead>
+            <tbody></tbody>
+        </table></div>
+    </div><div class="section">
+        <div class="section-title">三、竞品对比（2026-06-18）</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">品牌得分</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-17</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-18</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="218" width="28" height="2" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="213" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">0</text><rect x="52.0" y="218" width="28" height="2" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="214" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">0</text>
+            <text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">米兰软装 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text>
+        </svg>
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">提及率</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-17</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-18</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="218" width="28" height="2" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="213" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">0%</text><rect x="52.0" y="218" width="28" height="2" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="214" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">0%</text>
+            <text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">米兰软装 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text>
+        </svg>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e5e7eb">
+            <div style="font-size:0.9em;font-weight:600;color:#374151;margin-bottom:8px">平均提及排名（越小越好）</div>
+            <table style="width:100%;border-collapse:collapse"><tr><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#d1fae5;color:#065f46;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">0.0</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">米兰软装 <span style="font-size:0.7em;background:#1e3a5f;color:white;padding:1px 4px;border-radius:3px;margin-left:4px">我方</span></div></td></tr></table>
+        </div>
+    </div></div><div class="tab-content" id="tab-2" style="display:none"><div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:16px 20px;margin-bottom:16px">
+                <div style="font-weight:700;color:#92400e;font-size:1.05em">⚠️ 数据未就绪</div>
+                <div style="color:#78350f;font-size:0.9em;margin-top:4px">该项目今日监测数据为空，可能API尚未更新。请稍后刷新或手动检查。</div>
+            </div><div class="section">
+        <div class="section-title">一、核心指标</div>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
+            <table class="metric-table">
+                <thead><tr><th>指标</th><th>2026-06-17</th><th>2026-06-18</th><th>变动</th></tr></thead>
+                <tbody><tr>
+                <td>品牌得分</td>
+                <td>0</td>
+                <td style="font-weight:700;color:#1e3a5f">0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>品牌提及好感度</td>
+                <td>0分</td>
+                <td style="font-weight:700;color:#1e3a5f">0分</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及次数</td>
+                <td>0</td>
+                <td style="font-weight:700;color:#1e3a5f">0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>平均提及排名</td>
+                <td>0.0</td>
+                <td style="font-weight:700;color:#1e3a5f">0.0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及率</td>
+                <td>0.0%</td>
+                <td style="font-weight:700;color:#1e3a5f">0.0%</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr></tbody>
+            </table>
+            <div style="background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;padding:12px 16px;font-size:0.85em;color:#374151;line-height:1.7;white-space:nowrap">
+        <div style="font-weight:700;color:#065f46;margin-bottom:4px">📝 昨日发稿</div>
+        无发稿<br>本周 <b>19篇</b> 未知 15、cnblogs.com 4
+    </div>
+        </div>
+    </div><div class="section">
+        <div class="section-title">二、分平台提及率变化（变动 = 2026-06-18 vs 2026-06-17）</div>
+        <div class="matrix-wrap"><table class="matrix-table">
+            <thead><tr><th style="text-align:left">平台</th><th>2026-06-16</th><th>2026-06-17</th><th>2026-06-18</th><th>变动</th></tr></thead>
+            <tbody></tbody>
+        </table></div>
+    </div><div class="section">
+        <div class="section-title">三、竞品对比（2026-06-18）</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">品牌得分</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-17</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-18</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="218" width="28" height="2" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="213" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">0</text><rect x="52.0" y="218" width="28" height="2" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="214" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">0</text>
+            <text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">职卓科技 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text>
+        </svg>
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">提及率</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-17</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-18</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="218" width="28" height="2" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="213" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">0%</text><rect x="52.0" y="218" width="28" height="2" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="214" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">0%</text>
+            <text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">职卓科技 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text>
+        </svg>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e5e7eb">
+            <div style="font-size:0.9em;font-weight:600;color:#374151;margin-bottom:8px">平均提及排名（越小越好）</div>
+            <table style="width:100%;border-collapse:collapse"><tr><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#d1fae5;color:#065f46;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">0.0</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">职卓科技 <span style="font-size:0.7em;background:#1e3a5f;color:white;padding:1px 4px;border-radius:3px;margin-left:4px">我方</span></div></td></tr></table>
+        </div>
+    </div></div><div class="tab-content" id="tab-3" style="display:none"><div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:16px 20px;margin-bottom:16px">
+                <div style="font-weight:700;color:#92400e;font-size:1.05em">⚠️ 数据未就绪</div>
+                <div style="color:#78350f;font-size:0.9em;margin-top:4px">该项目今日监测数据为空，可能API尚未更新。请稍后刷新或手动检查。</div>
+            </div><div class="section">
+        <div class="section-title">一、核心指标</div>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
+            <table class="metric-table">
+                <thead><tr><th>指标</th><th>2026-06-17</th><th>2026-06-18</th><th>变动</th></tr></thead>
+                <tbody><tr>
+                <td>品牌得分</td>
+                <td>0</td>
+                <td style="font-weight:700;color:#1e3a5f">0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>品牌提及好感度</td>
+                <td>0分</td>
+                <td style="font-weight:700;color:#1e3a5f">0分</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及次数</td>
+                <td>0</td>
+                <td style="font-weight:700;color:#1e3a5f">0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>平均提及排名</td>
+                <td>0.0</td>
+                <td style="font-weight:700;color:#1e3a5f">0.0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及率</td>
+                <td>0.0%</td>
+                <td style="font-weight:700;color:#1e3a5f">0.0%</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr></tbody>
+            </table>
+            <div style="background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;padding:12px 16px;font-size:0.85em;color:#374151;line-height:1.7;white-space:nowrap">
+        <div style="font-weight:700;color:#065f46;margin-bottom:4px">📝 昨日发稿</div>
+        无发稿
+    </div>
+        </div>
+    </div><div class="section">
+        <div class="section-title">二、分平台提及率变化（变动 = 2026-06-18 vs 2026-06-17）</div>
+        <div class="matrix-wrap"><table class="matrix-table">
+            <thead><tr><th style="text-align:left">平台</th><th>2026-06-16</th><th>2026-06-17</th><th>2026-06-18</th><th>变动</th></tr></thead>
+            <tbody></tbody>
+        </table></div>
+    </div><div class="section">
+        <div class="section-title">三、竞品对比（2026-06-18）</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">品牌得分</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-17</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-18</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="218" width="28" height="2" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="213" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">0</text><rect x="52.0" y="218" width="28" height="2" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="214" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">0</text>
+            <text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">乐班 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text>
+        </svg>
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">提及率</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-17</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-18</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="218" width="28" height="2" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="213" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">0%</text><rect x="52.0" y="218" width="28" height="2" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="214" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">0%</text>
+            <text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">乐班 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text>
+        </svg>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e5e7eb">
+            <div style="font-size:0.9em;font-weight:600;color:#374151;margin-bottom:8px">平均提及排名（越小越好）</div>
+            <table style="width:100%;border-collapse:collapse"><tr><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#d1fae5;color:#065f46;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">0.0</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">乐班 <span style="font-size:0.7em;background:#1e3a5f;color:white;padding:1px 4px;border-radius:3px;margin-left:4px">我方</span></div></td></tr></table>
+        </div>
+    </div></div><div class="tab-content" id="tab-4" style="display:none"><div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:16px 20px;margin-bottom:16px">
+                <div style="font-weight:700;color:#92400e;font-size:1.05em">⚠️ 数据未就绪</div>
+                <div style="color:#78350f;font-size:0.9em;margin-top:4px">该项目今日监测数据为空，可能API尚未更新。请稍后刷新或手动检查。</div>
+            </div><div class="section">
+        <div class="section-title">一、核心指标</div>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
+            <table class="metric-table">
+                <thead><tr><th>指标</th><th>2026-06-17</th><th>2026-06-18</th><th>变动</th></tr></thead>
+                <tbody><tr>
+                <td>品牌得分</td>
+                <td>0</td>
+                <td style="font-weight:700;color:#1e3a5f">0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>品牌提及好感度</td>
+                <td>0分</td>
+                <td style="font-weight:700;color:#1e3a5f">0分</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及次数</td>
+                <td>0</td>
+                <td style="font-weight:700;color:#1e3a5f">0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>平均提及排名</td>
+                <td>0.0</td>
+                <td style="font-weight:700;color:#1e3a5f">0.0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及率</td>
+                <td>0.0%</td>
+                <td style="font-weight:700;color:#1e3a5f">0.0%</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr></tbody>
+            </table>
+            <div style="background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;padding:12px 16px;font-size:0.85em;color:#374151;line-height:1.7;white-space:nowrap">
+        <div style="font-weight:700;color:#065f46;margin-bottom:4px">📝 昨日发稿</div>
+        无发稿
+    </div>
+        </div>
+    </div><div class="section">
+        <div class="section-title">二、分平台提及率变化（变动 = 2026-06-18 vs 2026-06-17）</div>
+        <div class="matrix-wrap"><table class="matrix-table">
+            <thead><tr><th style="text-align:left">平台</th><th>2026-06-16</th><th>2026-06-17</th><th>2026-06-18</th><th>变动</th></tr></thead>
+            <tbody></tbody>
+        </table></div>
+    </div><div class="section">
+        <div class="section-title">三、竞品对比（2026-06-18）</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">品牌得分</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-17</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-18</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="218" width="28" height="2" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="213" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">0</text><rect x="52.0" y="218" width="28" height="2" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="214" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">0</text>
+            <text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">申新律所 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text>
+        </svg>
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">提及率</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-17</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-18</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="218" width="28" height="2" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="213" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">0%</text><rect x="52.0" y="218" width="28" height="2" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="214" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">0%</text>
+            <text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">申新律所 <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text>
+        </svg>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e5e7eb">
+            <div style="font-size:0.9em;font-weight:600;color:#374151;margin-bottom:8px">平均提及排名（越小越好）</div>
+            <table style="width:100%;border-collapse:collapse"><tr><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#d1fae5;color:#065f46;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">0.0</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">申新律所 <span style="font-size:0.7em;background:#1e3a5f;color:white;padding:1px 4px;border-radius:3px;margin-left:4px">我方</span></div></td></tr></table>
+        </div>
+    </div></div><div class="tab-content" id="tab-5" style="display:none"><div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:16px 20px;margin-bottom:16px">
+                <div style="font-weight:700;color:#92400e;font-size:1.05em">⚠️ 数据未就绪</div>
+                <div style="color:#78350f;font-size:0.9em;margin-top:4px">该项目今日监测数据为空，可能API尚未更新。请稍后刷新或手动检查。</div>
+            </div><div class="section">
+        <div class="section-title">一、核心指标</div>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
+            <table class="metric-table">
+                <thead><tr><th>指标</th><th>2026-06-17</th><th>2026-06-18</th><th>变动</th></tr></thead>
+                <tbody><tr>
+                <td>品牌得分</td>
+                <td>0</td>
+                <td style="font-weight:700;color:#1e3a5f">0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>品牌提及好感度</td>
+                <td>0分</td>
+                <td style="font-weight:700;color:#1e3a5f">0分</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及次数</td>
+                <td>0</td>
+                <td style="font-weight:700;color:#1e3a5f">0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>平均提及排名</td>
+                <td>0.0</td>
+                <td style="font-weight:700;color:#1e3a5f">0.0</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr><tr>
+                <td>提及率</td>
+                <td>0.0%</td>
+                <td style="font-weight:700;color:#1e3a5f">0.0%</td>
+                <td><span class="kpi-delta flat">—</span></td>
+            </tr></tbody>
+            </table>
+            <div style="background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;padding:12px 16px;font-size:0.85em;color:#374151;line-height:1.7;white-space:nowrap">
+        <div style="font-weight:700;color:#065f46;margin-bottom:4px">📝 昨日发稿</div>
+        <b>25篇</b> 未知 25<br>本周 <b>60篇</b> 未知 45、什么值得买 15
+    </div>
+        </div>
+    </div><div class="section">
+        <div class="section-title">二、分平台提及率变化（变动 = 2026-06-18 vs 2026-06-17）</div>
+        <div class="matrix-wrap"><table class="matrix-table">
+            <thead><tr><th style="text-align:left">平台</th><th>2026-06-16</th><th>2026-06-17</th><th>2026-06-18</th><th>变动</th></tr></thead>
+            <tbody></tbody>
+        </table></div>
+    </div><div class="section">
+        <div class="section-title">三、竞品对比（2026-06-18）</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">品牌得分</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-17</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-18</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="218" width="28" height="2" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="213" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">0</text><rect x="52.0" y="218" width="28" height="2" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="214" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">0</text>
+            <text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">ReeYee <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text>
+        </svg>
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+            <rect width="700" height="280" fill="white" rx="8"/>
+            <text x="50" y="22" font-size="16" fill="#1e3a5f" font-family="system-ui" font-weight="700">提及率</text>
+            <rect x="530" y="8" width="14" height="12" fill="#93c5fd" rx="2" opacity="0.7"/>
+            <text x="548" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-17</text>
+            <rect x="615" y="8" width="14" height="12" fill="#1e3a5f" rx="2"/>
+            <text x="633" y="19" font-size="12" fill="#6b7280" font-family="system-ui">2026-06-18</text>
+            <line x1="50" y1="176.25" x2="680" y2="176.25" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="132.5" x2="680" y2="132.5" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="88.75" x2="680" y2="88.75" stroke="#f1f5f9" stroke-width="1"/><line x1="50" y1="45.0" x2="680" y2="45.0" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="50" y1="220" x2="680" y2="220" stroke="#e5e7eb" stroke-width="1"/>
+            <rect x="81.0" y="218" width="28" height="2" fill="#1e3a5f" rx="3" opacity="1"/><text x="95.0" y="213" text-anchor="middle" font-size="13" fill="#1e3a5f" font-family="system-ui" font-weight="700">0%</text><rect x="52.0" y="218" width="28" height="2" fill="#93c5fd" rx="3" opacity="0.7"/><text x="66.0" y="214" text-anchor="middle" font-size="12" fill="#6b7280" font-family="system-ui">0%</text>
+            <text x="365.0" y="242" text-anchor="middle" font-size="13" fill="#374151" font-family="system-ui" font-weight="700">ReeYee <tspan font-size="9" fill="#1e3a5f" font-weight="700">[我方]</tspan></text>
+        </svg>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e5e7eb">
+            <div style="font-size:0.9em;font-weight:600;color:#374151;margin-bottom:8px">平均提及排名（越小越好）</div>
+            <table style="width:100%;border-collapse:collapse"><tr><td style="text-align:center;padding:12px 8px"><div style="display:inline-block;background:#d1fae5;color:#065f46;padding:6px 14px;border-radius:8px;font-weight:700;font-size:1.1em">0.0</div><div style="font-size:0.8em;color:#6b7280;margin-top:4px">ReeYee <span style="font-size:0.7em;background:#1e3a5f;color:white;padding:1px 4px;border-radius:3px;margin-left:4px">我方</span></div></td></tr></table>
+        </div>
+    </div></div><div class="tab-content" id="tab-6" style="display:none"><div class="section">
+        <div class="section-title">📝 发稿统计（2026-06-18）</div>
+        <div class="matrix-wrap"><table class="matrix-table" style="table-layout:fixed;width:100%">
+            <colgroup>
+                <col style="width:10%">
+                <col style="width:6%">
+                <col style="width:32%">
+                <col style="width:6%">
+                <col style="width:46%">
+            </colgroup>
+            <thead><tr>
+                <th style="text-align:left">项目</th>
+                <th>昨日</th>
+                <th style="text-align:left">昨日媒体</th>
+                <th>累计</th>
+                <th style="text-align:left">本周媒体</th>
+            </tr></thead>
+            <tbody><tr>
+            <td style="font-weight:600;white-space:nowrap">纽特舒玛</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">0</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">—</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">米兰软装</td>
+            <td style="text-align:center;font-weight:700;color:#065f46">27</td>
+            <td style="font-size:0.88em">淘江湖(7)、博客园(6)、搜狐(5)、网易(4)、宜家居家装网(4)、齐家网(3)、什么值得买(3)、菏泽广电网(2)、今日头条(2)、网易新闻客户端(1)、蓝色河畔(1)</td>
+            <td style="text-align:center;font-weight:600">73</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">搜狐号(16)、搜狐(16)、网易(13)、博客园(10)、淘江湖(7)、咸宁新闻网(6)、宜家居家装网(4)、齐家网(3)、什么值得买(3)、菏泽广电网(2)、今日头条(2)、网易新闻客户端(1)、蓝色河畔(1)</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">职卓科技</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">19</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">未知(15)、cnblogs.com(4)</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">乐班二期</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">0</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">—</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">申新律所</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">0</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">—</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">黑奥秘</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">0</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">—</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">美团-黑奥秘</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">0</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">—</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">美团安心学</td>
+            <td style="text-align:center;font-weight:700;color:#9ca3af">0</td>
+            <td style="font-size:0.88em">—</td>
+            <td style="text-align:center;font-weight:600">0</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">—</td>
+        </tr><tr>
+            <td style="font-weight:600;white-space:nowrap">ReeYee</td>
+            <td style="text-align:center;font-weight:700;color:#065f46">25</td>
+            <td style="font-size:0.88em">未知(25)</td>
+            <td style="text-align:center;font-weight:600">60</td>
+            <td style="font-size:0.88em;max-width:320px;word-break:break-all">未知(45)、什么值得买(15)</td>
+        </tr></tbody>
+        </table></div>
+    </div></div>
+    <div class="footer">Generated by GEO Daily Monitor · 爱搜</div>
+</div>
+<script>
+function switchTab(idx) {
+    document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+    document.querySelectorAll('.tab-content').forEach((c, i) => c.style.display = i === idx ? 'block' : 'none');
+}
+</script>
+</body>
+</html>
