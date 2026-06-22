@@ -3,230 +3,335 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GEO项目日报</title>
+<title>GEO 每日监控看板</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:-apple-system,"SF Pro Display","Helvetica Neue",sans-serif;background:#f5f6f8;color:#1f2329;padding:24px;}
-.container{max-width:800px;margin:0 auto;}
-h1{font-size:22px;font-weight:600;margin-bottom:6px;}
-.subtitle{color:#8f959e;font-size:13px;margin-bottom:24px;}
-.report-card{background:#fff;border-radius:12px;padding:16px 20px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);display:flex;justify-content:space-between;align-items:center;}
-.report-card:hover{box-shadow:0 2px 8px rgba(0,0,0,0.1);}
-.report-date{font-size:16px;font-weight:600;}
-.report-type{font-size:12px;color:#8f959e;margin-top:2px;}
-.report-link{color:#3370ff;text-decoration:none;font-size:14px;font-weight:500;}
-.report-link:hover{text-decoration:underline;}
-.empty{text-align:center;padding:60px 20px;color:#8f959e;font-size:14px;}
-.badge{display:inline-block;background:#e8f4fd;color:#3370ff;font-size:11px;padding:2px 8px;border-radius:10px;margin-left:8px;font-weight:500;}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+       background: #f0f2f5; color: #1f2937; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.header { background: linear-gradient(135deg, #1e3a5f 0%, #2d5986 100%);
+          color: white; padding: 28px 32px; border-radius: 16px; margin-bottom: 24px;
+          display: flex; justify-content: space-between; align-items: center; }
+.header h1 { font-size: 1.5em; }
+.header .sub { opacity: 0.85; font-size: 0.9em; margin-top: 4px; }
+.header .meta { text-align: right; font-size: 0.85em; opacity: 0.8; }
+.section { background: white; border-radius: 16px; padding: 24px 28px;
+           margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.section-title { font-size: 1.1em; font-weight: 700; color: #1e3a5f;
+                  margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
+.footer { text-align: center; color: #9ca3af; font-size: 0.8em; margin-top: 24px; padding: 16px; }
+.overview-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 768px) { .overview-grid { grid-template-columns: 1fr; } }
+.proj-card { background: white; border-radius: 16px; padding: 24px;
+             box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-top: 4px solid #1e3a5f; }
+.proj-card-title { font-size: 1.15em; font-weight: 700; color: #1e3a5f; margin-bottom: 4px; }
+.proj-card-scope { font-size: 0.82em; color: #6b7280; margin-bottom: 16px; }
+.proj-kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+.proj-kpi { text-align: center; padding: 12px 8px; background: #f8fafc; border-radius: 10px; }
+.proj-kpi-label { font-size: 0.75em; color: #6b7280; }
+.proj-kpi-value { font-size: 1.4em; font-weight: 800; color: #1e3a5f; }
+.proj-kpi-delta { font-size: 0.8em; }
+.proj-kpi-delta.up { color: #10b981; }
+.proj-kpi-delta.down { color: #ef4444; }
+.proj-kpi-delta.flat { color: #9ca3af; }
+.plat-list-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+.plat-row { display: flex; align-items: center; gap: 8px; padding: 6px 0;
+            border-bottom: 1px solid #f1f5f9; font-size: 0.88em; }
+.plat-row:last-child { border-bottom: none; }
+.plat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.plat-name { color: #374151; min-width: 65px; }
+.plat-rate { font-weight: 700; color: #1e3a5f; margin-left: auto; }
+.plat-delta { font-size: 0.8em; min-width: 55px; text-align: right; }
+.plat-delta.up { color: #10b981; }
+.plat-delta.down { color: #ef4444; }
+.plat-delta.flat { color: #9ca3af; }
+.detail-link { display: inline-block; margin-top: 12px; font-size: 0.88em; color: #2d5986;
+               text-decoration: none; font-weight: 600; }
+.detail-link:hover { text-decoration: underline; }
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+.kpi-item { background: #f8fafc; border-radius: 12px; padding: 16px 20px; text-align: center; }
+.kpi-label { font-size: 0.8em; color: #6b7280; margin-bottom: 4px; }
+.kpi-value { font-size: 1.6em; font-weight: 800; color: #1e3a5f; }
+.kpi-delta { font-size: 0.85em; margin-top: 2px; }
+.kpi-delta.up { color: #10b981; }
+.kpi-delta.down { color: #ef4444; }
+.kpi-delta.flat { color: #9ca3af; }
+.detail-plat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+@media (max-width: 768px) { .detail-plat-grid { grid-template-columns: 1fr 1fr; } }
+.plat-card { display: flex; align-items: center; gap: 12px; padding: 14px 16px;
+             background: #f8fafc; border-radius: 10px; }
+.plat-card .plat-rate { margin-left: auto; font-size: 1.1em; }
+.hist-table { width: 100%; border-collapse: collapse; }
+.hist-table th { background: #f1f5f9; padding: 10px 12px; font-weight: 600;
+                 text-align: center; font-size: 0.82em; white-space: nowrap; }
+.hist-table th:first-child { text-align: left; }
+.hist-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+                 text-align: center; font-size: 0.9em; }
+.hist-table td:first-child { text-align: left; font-weight: 600; color: #374151; }
+.hist-table tr:hover { background: #f8fafc; }
+.chart-wrap { width: 100%; overflow-x: auto; }
 </style>
 </head>
 <body>
 <div class="container">
-<h1>GEO项目日报</h1>
-<p class="subtitle">品类词监测数据 · 每日更新</p>
-<div class="report-card">
-<div>
-<div class="report-date">纽特舒玛_每日对比_2026-06-17_2026-06-18<span class="badge">最新</span></div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/纽特舒玛_每日对比_2026-06-17_2026-06-18.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">纽特舒玛_每日对比_2026-06-16_2026-06-17</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/纽特舒玛_每日对比_2026-06-16_2026-06-17.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">纽特舒玛_每日对比_2026-06-15_2026-06-16</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/纽特舒玛_每日对比_2026-06-15_2026-06-16.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">纽特舒玛_每日对比_2026-06-14_2026-06-15</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/纽特舒玛_每日对比_2026-06-14_2026-06-15.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">纽特舒玛_每日对比_2026-06-12_2026-06-13</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/纽特舒玛_每日对比_2026-06-12_2026-06-13.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">纽特舒玛_每日对比_2026-06-11_2026-06-12</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/纽特舒玛_每日对比_2026-06-11_2026-06-12.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">纽特舒玛_每日对比_2026-06-09_2026-06-10</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/纽特舒玛_每日对比_2026-06-09_2026-06-10.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">纽特舒玛_每日对比_2026-06-08_2026-06-08</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/纽特舒玛_每日对比_2026-06-08_2026-06-08.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">纽特舒玛_每日对比_2026-06-07_2026-06-08</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/纽特舒玛_每日对比_2026-06-07_2026-06-08.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">纽特舒玛_每日对比_2026-06-06_2026-06-08</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/纽特舒玛_每日对比_2026-06-06_2026-06-08.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">特斯拉_每日对比_2026-06-17_2026-06-18</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/特斯拉_每日对比_2026-06-17_2026-06-18.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">特斯拉_每日对比_2026-06-16_2026-06-17</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/特斯拉_每日对比_2026-06-16_2026-06-17.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">特斯拉_每日对比_2026-06-15_2026-06-16</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/特斯拉_每日对比_2026-06-15_2026-06-16.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">特斯拉_每日对比_2026-06-14_2026-06-15</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/特斯拉_每日对比_2026-06-14_2026-06-15.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">特斯拉_每日对比_2026-06-12_2026-06-13</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/特斯拉_每日对比_2026-06-12_2026-06-13.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">特斯拉_每日对比_2026-06-11_2026-06-12</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/特斯拉_每日对比_2026-06-11_2026-06-12.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">特斯拉_每日对比_2026-06-09_2026-06-10</div>
-<div class="report-type">每日对比</div>
-</div>
-<a class="report-link" href="reports/特斯拉_每日对比_2026-06-09_2026-06-10.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">2026-06-21</div>
-<div class="report-type">每日监控</div>
-</div>
-<a class="report-link" href="reports/2026-06-21.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">2026-06-20</div>
-<div class="report-type">每日监控</div>
-</div>
-<a class="report-link" href="reports/2026-06-20.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">2026-06-19</div>
-<div class="report-type">每日监控</div>
-</div>
-<a class="report-link" href="reports/2026-06-19.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">2026-06-18</div>
-<div class="report-type">每日监控</div>
-</div>
-<a class="report-link" href="reports/2026-06-18.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">2026-06-17</div>
-<div class="report-type">每日监控</div>
-</div>
-<a class="report-link" href="reports/2026-06-17.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">2026-06-16</div>
-<div class="report-type">每日监控</div>
-</div>
-<a class="report-link" href="reports/2026-06-16.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">2026-06-14</div>
-<div class="report-type">每日监控</div>
-</div>
-<a class="report-link" href="reports/2026-06-14.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">2026-06-13</div>
-<div class="report-type">每日监控</div>
-</div>
-<a class="report-link" href="reports/2026-06-13.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">2026-06-12</div>
-<div class="report-type">每日监控</div>
-</div>
-<a class="report-link" href="reports/2026-06-12.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">2026-06-11</div>
-<div class="report-type">每日监控</div>
-</div>
-<a class="report-link" href="reports/2026-06-11.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">2026-06-10</div>
-<div class="report-type">每日监控</div>
-</div>
-<a class="report-link" href="reports/2026-06-10.html">查看报告 →</a>
-</div>
-<div class="report-card">
-<div>
-<div class="report-date">2026-06-09</div>
-<div class="report-type">每日监控</div>
-</div>
-<a class="report-link" href="reports/2026-06-09.html">查看报告 →</a>
-</div>
+    <div class="header">
+        <div>
+            <h1>GEO 每日监控看板</h1>
+            <div class="sub">数据截止 2026-06-22</div>
+        </div>
+        <div class="meta">生成时间<br>2026-06-22 18:38</div>
+    </div>
+    <div class="overview-grid">
+        <div class="proj-card">
+            <div class="proj-card-title">纽特舒玛</div>
+            <div class="proj-card-scope">14品类词+2品牌词</div>
+            <div class="proj-kpi-grid">
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">提及率</div>
+                    <div class="proj-kpi-value">56.0%</div>
+                    <span class="proj-kpi-delta up">+5.0pp</span>
+                </div>
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">品牌得分</div>
+                    <div class="proj-kpi-value">59</div>
+                </div>
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">平均排名</div>
+                    <div class="proj-kpi-value">3.1</div>
+                </div>
+            </div>
+            <div class="plat-list-2col">
+                <div class="plat-row">
+                <div class="plat-dot" style="background:#60a5fa"></div>
+                <div class="plat-name">豆包网页</div>
+                <div class="plat-rate">75.0%</div>
+                <span class="plat-delta up">+12.0pp</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#2563eb"></div>
+                <div class="plat-name">豆包手机</div>
+                <div class="plat-rate">69.0%</div>
+                <span class="plat-delta flat">—</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#34d399"></div>
+                <div class="plat-name">DeepSeek网页</div>
+                <div class="plat-rate">56.0%</div>
+                <span class="plat-delta up">+6.0pp</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#059669"></div>
+                <div class="plat-name">DeepSeek手机</div>
+                <div class="plat-rate">63.0%</div>
+                <span class="plat-delta up">+7.0pp</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#7c3aed"></div>
+                <div class="plat-name">千问手机</div>
+                <div class="plat-rate">19.0%</div>
+                <span class="plat-delta flat">—</span>
+            </div>
+            </div>
+            <a class="detail-link" href="preview_纽特舒玛.html">查看详细趋势 →</a>
+        </div><div class="proj-card">
+            <div class="proj-card-title">米兰软装</div>
+            <div class="proj-card-scope">12品类词</div>
+            <div class="proj-kpi-grid">
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">提及率</div>
+                    <div class="proj-kpi-value">71.0%</div>
+                    <span class="proj-kpi-delta flat">—</span>
+                </div>
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">品牌得分</div>
+                    <div class="proj-kpi-value">69</div>
+                </div>
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">平均排名</div>
+                    <div class="proj-kpi-value">4.7</div>
+                </div>
+            </div>
+            <div class="plat-list-2col">
+                <div class="plat-row">
+                <div class="plat-dot" style="background:#60a5fa"></div>
+                <div class="plat-name">豆包网页</div>
+                <div class="plat-rate">83.0%</div>
+                <span class="plat-delta up">+16.0pp</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#2563eb"></div>
+                <div class="plat-name">豆包手机</div>
+                <div class="plat-rate">67.0%</div>
+                <span class="plat-delta down">-16.0pp</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#34d399"></div>
+                <div class="plat-name">DeepSeek网页</div>
+                <div class="plat-rate">75.0%</div>
+                <span class="plat-delta up">+17.0pp</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#059669"></div>
+                <div class="plat-name">DeepSeek手机</div>
+                <div class="plat-rate">58.0%</div>
+                <span class="plat-delta down">-17.0pp</span>
+            </div>
+            </div>
+            <a class="detail-link" href="preview_米兰软装.html">查看详细趋势 →</a>
+        </div><div class="proj-card">
+            <div class="proj-card-title">职卓科技</div>
+            <div class="proj-card-scope">5品类词</div>
+            <div class="proj-kpi-grid">
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">提及率</div>
+                    <div class="proj-kpi-value">45.0%</div>
+                    <span class="proj-kpi-delta down">-5.0pp</span>
+                </div>
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">品牌得分</div>
+                    <div class="proj-kpi-value">46</div>
+                </div>
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">平均排名</div>
+                    <div class="proj-kpi-value">2.2</div>
+                </div>
+            </div>
+            <div class="plat-list-2col">
+                <div class="plat-row">
+                <div class="plat-dot" style="background:#60a5fa"></div>
+                <div class="plat-name">豆包网页</div>
+                <div class="plat-rate">60.0%</div>
+                <span class="plat-delta flat">—</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#2563eb"></div>
+                <div class="plat-name">豆包手机</div>
+                <div class="plat-rate">40.0%</div>
+                <span class="plat-delta down">-20.0pp</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#34d399"></div>
+                <div class="plat-name">DeepSeek网页</div>
+                <div class="plat-rate">40.0%</div>
+                <span class="plat-delta flat">—</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#059669"></div>
+                <div class="plat-name">DeepSeek手机</div>
+                <div class="plat-rate">40.0%</div>
+                <span class="plat-delta flat">—</span>
+            </div>
+            </div>
+            <a class="detail-link" href="preview_职卓科技.html">查看详细趋势 →</a>
+        </div><div class="proj-card">
+            <div class="proj-card-title">乐班</div>
+            <div class="proj-card-scope">8品类词</div>
+            <div class="proj-kpi-grid">
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">提及率</div>
+                    <div class="proj-kpi-value">81.0%</div>
+                    <span class="proj-kpi-delta down">-7.0pp</span>
+                </div>
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">品牌得分</div>
+                    <div class="proj-kpi-value">80</div>
+                </div>
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">平均排名</div>
+                    <div class="proj-kpi-value">1.5</div>
+                </div>
+            </div>
+            <div class="plat-list-2col">
+                <div class="plat-row">
+                <div class="plat-dot" style="background:#60a5fa"></div>
+                <div class="plat-name">豆包网页</div>
+                <div class="plat-rate">88.0%</div>
+                <span class="plat-delta flat">—</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#2563eb"></div>
+                <div class="plat-name">豆包手机</div>
+                <div class="plat-rate">50.0%</div>
+                <span class="plat-delta down">-25.0pp</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#34d399"></div>
+                <div class="plat-name">DeepSeek网页</div>
+                <div class="plat-rate">88.0%</div>
+                <span class="plat-delta down">-12.0pp</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#059669"></div>
+                <div class="plat-name">DeepSeek手机</div>
+                <div class="plat-rate">100.0%</div>
+                <span class="plat-delta up">+12.0pp</span>
+            </div>
+            </div>
+            <a class="detail-link" href="preview_乐班.html">查看详细趋势 →</a>
+        </div><div class="proj-card">
+            <div class="proj-card-title">申新律所</div>
+            <div class="proj-card-scope">5品类词</div>
+            <div class="proj-kpi-grid">
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">提及率</div>
+                    <div class="proj-kpi-value">25.0%</div>
+                    <span class="proj-kpi-delta flat">—</span>
+                </div>
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">品牌得分</div>
+                    <div class="proj-kpi-value">31</div>
+                </div>
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">平均排名</div>
+                    <div class="proj-kpi-value">3.4</div>
+                </div>
+            </div>
+            <div class="plat-list-2col">
+                <div class="plat-row">
+                <div class="plat-dot" style="background:#60a5fa"></div>
+                <div class="plat-name">豆包网页</div>
+                <div class="plat-rate">40.0%</div>
+                <span class="plat-delta flat">—</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#2563eb"></div>
+                <div class="plat-name">豆包手机</div>
+                <div class="plat-rate">60.0%</div>
+                <span class="plat-delta flat">—</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#34d399"></div>
+                <div class="plat-name">DeepSeek网页</div>
+                <div class="plat-rate">0.0%</div>
+                <span class="plat-delta flat">—</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#059669"></div>
+                <div class="plat-name">DeepSeek手机</div>
+                <div class="plat-rate">0.0%</div>
+                <span class="plat-delta flat">—</span>
+            </div>
+            </div>
+            <a class="detail-link" href="preview_申新律所.html">查看详细趋势 →</a>
+        </div><div class="proj-card">
+            <div class="proj-card-title">ReeYee</div>
+            <div class="proj-card-scope">4品类词+1品牌词</div>
+            <div class="proj-kpi-grid">
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">提及率</div>
+                    <div class="proj-kpi-value">80.0%</div>
+                    <span class="proj-kpi-delta down">-20.0pp</span>
+                </div>
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">品牌得分</div>
+                    <div class="proj-kpi-value">80</div>
+                </div>
+                <div class="proj-kpi">
+                    <div class="proj-kpi-label">平均排名</div>
+                    <div class="proj-kpi-value">1.0</div>
+                </div>
+            </div>
+            <div class="plat-list-2col">
+                <div class="plat-row">
+                <div class="plat-dot" style="background:#60a5fa"></div>
+                <div class="plat-name">豆包网页</div>
+                <div class="plat-rate">80.0%</div>
+                <span class="plat-delta down">-20.0pp</span>
+            </div><div class="plat-row">
+                <div class="plat-dot" style="background:#2563eb"></div>
+                <div class="plat-name">豆包手机</div>
+                <div class="plat-rate">80.0%</div>
+                <span class="plat-delta down">-20.0pp</span>
+            </div>
+            </div>
+            <a class="detail-link" href="preview_ReeYee.html">查看详细趋势 →</a>
+        </div>
+    </div>
+    <div class="footer">Generated by GEO Daily Monitor · 爱搜</div>
 </div>
 </body>
 </html>
