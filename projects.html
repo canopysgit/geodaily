@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爱搜项目全景看板</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+       background: #f0f2f5; color: #1f2937; line-height: 1.5; }
+.container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+.header { background: linear-gradient(135deg, #1e3a5f 0%, #2d5986 100%);
+          color: white; padding: 28px 32px; border-radius: 16px; margin-bottom: 24px;
+          display: flex; justify-content: space-between; align-items: center; }
+.header h1 { font-size: 1.5em; }
+.header .sub { opacity: 0.85; font-size: 0.9em; margin-top: 4px; }
+.header .meta { text-align: right; font-size: 0.85em; opacity: 0.8; }
+.stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.stat-card { background: white; border-radius: 12px; padding: 16px 20px;
+             box-shadow: 0 2px 8px rgba(0,0,0,0.06); flex: 1; min-width: 120px; text-align: center; }
+.stat-num { font-size: 2em; font-weight: 800; color: #1e3a5f; }
+.stat-label { font-size: 0.8em; color: #6b7280; margin-top: 2px; }
+.section { background: white; border-radius: 16px; padding: 24px 28px;
+           margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.section-title { font-size: 1.1em; font-weight: 700; color: #1e3a5f;
+                 margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
+
+.proj-table { width: 100%; border-collapse: collapse; }
+.proj-table th { background: #f8fafc; padding: 10px 12px; font-weight: 600;
+                 text-align: left; font-size: 0.82em; border-bottom: 2px solid #e5e7eb; }
+.proj-table td { padding: 10px 12px; border-bottom: 1px solid #f1f5f9; font-size: 0.88em; vertical-align: top; }
+.proj-table tr:hover { background: #f8fafc; }
+.proj-name { font-weight: 700; color: #1e3a5f; white-space: nowrap; }
+
+.proj-status { display: inline-block; padding: 2px 10px; border-radius: 12px;
+               font-size: 0.82em; font-weight: 600; white-space: nowrap; }
+.status-签约前 { background: #fef3c7; color: #92400e; }
+.status-确认问题 { background: #fef3c7; color: #92400e; }
+.status-身份卡生成 { background: #ede9fe; color: #5b21b6; }
+.status-身份卡确认 { background: #ede9fe; color: #5b21b6; }
+.status-样本确认 { background: #fce7f3; color: #9d174d; }
+.status-文章铺设 { background: #d1fae5; color: #065f46; }
+.status-数据监测 { background: #cffafe; color: #0e7490; }
+.status-结案报告 { background: #e0e7ff; color: #3730a3; }
+
+/* Milestone dots */
+.ms-stage { display: inline-flex; flex-direction: column; align-items: center; gap: 2px; margin-right: 6px; }
+.ms-dot { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+          font-size: 10px; font-weight: 700; color: white; }
+.ms-dot.done { background: #059669; }
+.ms-dot.current { background: #2563eb; }
+.ms-dot.partial { background: #f59e0b; }
+.ms-dot.future { background: #e5e7eb; color: #9ca3af; }
+.ms-label { font-size: 10px; color: #6b7280; white-space: nowrap; }
+.ms-date-label { font-size: 9px; color: #9ca3af; white-space: nowrap; }
+.ms-connector { display: inline-block; width: 12px; height: 2px; background: #d1d5db; vertical-align: middle; margin: 0 2px; }
+.ms-connector.done { background: #059669; }
+
+.week-badge { display: inline-block; background: #059669; color: white; font-size: 11px;
+              padding: 1px 8px; border-radius: 10px; font-weight: 600; margin-left: 8px; }
+
+/* Timeline */
+.tl-wrap { position: relative; height: 36px; min-width: 280px; }
+.tl-axis { position: absolute; top: 14px; left: 0; right: 0; height: 1px; background: #e5e7eb; }
+.tl-month { position: absolute; top: 0; font-size: 10px; color: #9ca3af; transform: translateX(-50%); white-space: nowrap; }
+.tl-today-line { position: absolute; top: 0; width: 2px; height: 36px; background: #ef4444; z-index: 2; }
+.tl-today-label { position: absolute; top: -1px; font-size: 9px; color: #ef4444; font-weight: 600;
+                  transform: translateX(-50%); white-space: nowrap; }
+.tl-bar { position: absolute; top: 10px; height: 16px; border-radius: 4px; opacity: 0.75; }
+.tl-bar-label { position: absolute; top: 10px; height: 16px; font-size: 9px; color: #374151;
+                white-space: nowrap; line-height: 16px; }
+
+.filters { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.filter-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid #d1d5db;
+              background: white; font-size: 0.82em; cursor: pointer; font-weight: 500; }
+.filter-btn.active { background: #1e3a5f; color: white; border-color: #1e3a5f; }
+.filter-btn:hover { border-color: #1e3a5f; }
+.footer { text-align: center; color: #9ca3af; font-size: 0.8em; margin-top: 24px; padding: 16px; }
+</style>
+</head>
+<body>
+<div class="nav" style="background:#1e3a5f;padding:10px 24px;display:flex;gap:16px;align-items:center">
+    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.9em;padding:4px 12px;border-radius:8px">GEO监控</a>
+    <a href="projects.html" style="color:white;text-decoration:none;font-weight:600;font-size:0.9em;padding:4px 12px;border-radius:8px;background:rgba(255,255,255,0.15)">项目总览</a>
+</div>
+<div class="container">
+    <div class="header">
+        <div>
+            <h1>爱搜项目全景看板</h1>
+            <div class="sub">所有代运营项目 · 里程碑进度</div>
+        </div>
+        <div class="meta">更新时间<br>2026-06-22</div>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="section">
+        <div class="section-title">项目进度</div>
+        <div class="filters" id="filters"></div>
+        <div style="overflow-x:auto">
+            <table class="proj-table">
+                <thead><tr>
+                    <th style="min-width:90px">项目</th>
+                    <th style="min-width:80px">状态</th>
+                    <th style="min-width:340px">里程碑</th>
+                    <th style="min-width:300px">时间线</th>
+                    <th style="min-width:200px">下一步</th>
+                </tr></thead>
+                <tbody id="projBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer">Generated by 爱搜项目看板 · 数据来源：代运营客户承接记录表</div>
+</div>
+<script>
+const MS_STAGES = ['问题确认','身卡发出','身卡确认','样文发出','样文确认','文章投放'];
+
+const PROJECTS = [
+  {name:"纽特舒玛",status:"文章铺设",start:"2026-05-18",end:"2026-08-17",
+   ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:"0518",样文确认:null,文章投放:"0518"},
+   next:"代理发客户方案、客户确认"},
+  {name:"东鹏瓷砖",status:"样本确认",start:"2026-06-01",end:"2026-08-31",
+   ms:{问题确认:"0612",身卡发出:"0602",身卡确认:null,样文发出:"0615",样文确认:null,文章投放:null},
+   partial:["身卡发出"],
+   next:"更新身份卡、客户确认身份卡、客户确认后样文后投放5A文章"},
+  {name:"纽特舒玛",status:"文章铺设",start:"2026-05-18",end:"2026-08-17",
+   ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:"0518",样文确认:null,文章投放:"0518"},
+   next:"千问讨论怎么办"},
+  {name:"米兰软装",status:"文章铺设",start:"2026-05-18",end:"2026-08-29",
+   ms:{问题确认:null,身卡发出:"0520",身卡确认:"0526",样文发出:"0527",样文确认:"0529",文章投放:"0529"},
+   next:"继续提升数据"},
+  {name:"职卓",status:"文章铺设",start:"2026-04-22",end:"2026-07-21",
+   ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0512"},
+   next:"突破3个问题和引导"},
+  {name:"乐班",status:"文章铺设",start:"2026-06-05",end:"2026-09-08",
+   ms:{问题确认:"0529",身卡发出:"0601",身卡确认:"0602",样文发出:"0603",样文确认:"0605",文章投放:"0609"},
+   next:"维持数据"},
+  {name:"申新-知识产权",status:"文章铺设",start:"2026-04-02",end:"2026-05-31",
+   ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0512"},
+   next:"曲辉明确客户下一步动向"},
+  {name:"ReeYee",status:"文章铺设",start:"2026-06-05",end:"2026-07-12",
+   ms:{问题确认:null,身卡发出:"0605",身卡确认:"0610",样文发出:"0611",样文确认:"0612",文章投放:"0612"},
+   next:"突破第3个问题"},
+  {name:"瓜子",status:"文章铺设",start:"2026-04-20",end:"2026-08-31",
+   ms:{问题确认:"0605",身卡发出:"0609",身卡确认:"0611",样文发出:"0610",样文确认:"0611",文章投放:"0612"},
+   next:"继续提升数据，突破关键平台和问题，收集执行和效果数据"},
+  {name:"东鹏瓷砖",status:"样本确认",start:"2026-06-01",end:"2026-08-31",
+   ms:{问题确认:"0612",身卡发出:"0602",身卡确认:null,样文发出:"0615",样文确认:null,文章投放:null},
+   partial:["身卡发出"],
+   next:"士豪写样板文章，等客户提供更多资料"},
+  {name:"玉蕙医院",status:"身份卡确认",start:"2026-06-18",end:"2026-07-26",
+   ms:{问题确认:"0618",身卡发出:"0622",身卡确认:null,样文发出:null,样文确认:null,文章投放:null},
+   next:"身份卡确认"},
+  {name:"卡唯朵",status:"身份卡生成",start:"2026-06-22",end:"2026-09-27",
+   ms:{问题确认:"0622",身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:null},
+   next:"建身份卡"},
+  {name:"轩驹精修汽修",status:"确认问题",start:"2026-06-11",end:"2026-07-26",
+   ms:{问题确认:null,身卡发出:"0612",身卡确认:null,样文发出:null,样文确认:null,文章投放:null},
+   next:"确认问题、确认身份卡"},
+  {name:"懂车帝",status:"确认问题",start:"2026-06-11",end:"",
+   ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:null},
+   next:"关注客户进一步反馈"},
+  {name:"西麦",status:"签约前",start:"2026-05-06",end:"",
+   ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:null},
+   next:"更新一版PPT方案"},
+  {name:"特斯拉",status:"数据监测",start:"2026-06-01",end:"2026-06-30",
+   ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:null},
+   next:"完成周报数据分析"},
+  {name:"黑奥秘",status:"结案报告",start:"2026-05-13",end:"2026-06-21",
+   ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0513"},
+   next:"出月结报告"},
+];
+
+const TODAY = new Date("2026-06-22");
+
+const STATUS_IDX = {'签约前':0,'确认问题':1,'身份卡生成':2,'身份卡确认':3,
+                    '样本确认':4,'文章铺设':5,'结案报告':6,'数据监测':7};
+
+function parseD(s){ return s ? new Date("2026-"+s.replace(/(\d{2})(\d{2})/,"$1-$2")) : null; }
+function fmtD(d){ return d ? `${d.getMonth()+1}/${d.getDate()}` : ''; }
+function fmtDM(d){ return d ? `${d.getMonth()+1}月${d.getDate()}日` : ''; }
+
+// Timeline range
+const allTs = PROJECTS.flatMap(p => {
+  const arr = [];
+  if(p.start) arr.push(new Date(p.start).getTime());
+  if(p.end) arr.push(new Date(p.end).getTime());
+  Object.values(p.ms).forEach(v => { if(v) arr.push(parseD(v).getTime()); });
+  return arr;
+}).filter(Boolean);
+const tlMin = new Date(Math.min(...allTs));
+tlMin.setDate(tlMin.getDate() - 10);
+const tlMax = new Date(Math.max(...allTs, TODAY.getTime()));
+tlMax.setDate(tlMax.getDate() + 10);
+const tlSpan = tlMax.getTime() - tlMin.getTime();
+function pct(ts){ return ((ts - tlMin.getTime()) / tlSpan) * 100; }
+
+// Month markers
+function getMonthMarkers(){
+  const marks = [];
+  let d = new Date(tlMin.getFullYear(), tlMin.getMonth(), 1);
+  while(d <= tlMax){
+    marks.push({date:new Date(d), label:`${d.getMonth()+1}月`});
+    d.setMonth(d.getMonth()+1);
+  }
+  return marks;
+}
+
+function getPublishWeek(ms){
+  if(!ms || !ms['文章投放']) return null;
+  const pubDate = parseD(ms['文章投放']);
+  if(!pubDate) return null;
+  const diffDays = Math.floor((TODAY - pubDate) / (1000*60*60*24));
+  if(diffDays < 0) return null;
+  return Math.floor(diffDays / 7) + 1;
+}
+
+function getTotalWeeks(start, end){
+  if(!start || !end) return null;
+  const s = new Date(start), e = new Date(end);
+  const diffDays = Math.ceil((e - s) / (1000*60*60*24));
+  return Math.ceil(diffDays / 7);
+}
+
+function renderMs(p){
+  const partials = p.partial || [];
+
+  let html = '';
+  MS_STAGES.forEach((s,i) => {
+    const date = p.ms[s];
+    const isPartial = partials.includes(s);
+    const isDone = !isPartial && date;
+    const isReached = date || isPartial;
+    const cls = isDone ? 'done' : isPartial ? 'partial' : 'future';
+
+    if(i > 0) html += `<span class="ms-connector ${isDone?'done':''}"></span>`;
+    html += `<span class="ms-stage">`;
+    html += `<div class="ms-dot ${cls}" title="${s}${date ? ' '+date : ''}${isPartial?' (部分)':''}">${i+1}</div>`;
+    html += `<div class="ms-label">${s}</div>`;
+    if(date) html += `<div class="ms-date-label">${date}</div>`;
+    html += `</span>`;
+  });
+
+  const week = getPublishWeek(p.ms);
+  if(week !== null) html += `<span class="week-badge">第${week}周</span>`;
+
+  return html;
+}
+
+function renderTimeline(p){
+  const startD = p.start ? new Date(p.start) : null;
+  const endD = p.end ? new Date(p.end) : null;
+
+  const monthMarks = getMonthMarkers().map(m => {
+    const x = pct(m.date.getTime());
+    return `<div class="tl-month" style="left:${x}%">${m.label}</div>`;
+  }).join('');
+
+  const todayX = pct(TODAY.getTime());
+  const todayMark = `<div class="tl-today-line" style="left:${todayX}%"></div>
+                     <div class="tl-today-label" style="left:${todayX}%">今天</div>`;
+
+  let barHtml = '';
+  if(startD){
+    const x1 = pct(startD.getTime());
+    const x2 = endD ? pct(endD.getTime()) : pct(TODAY.getTime());
+    const w = Math.max(x2 - x1, 1);
+    const idx = STATUS_IDX[p.status] || 0;
+    const color = idx >= 5 ? '#059669' : idx >= 2 ? '#2563eb' : '#f59e0b';
+    barHtml = `<div class="tl-bar" style="left:${x1}%;width:${w}%;background:${color}"></div>`;
+    barHtml += `<div class="tl-bar-label" style="left:${x1}%">${fmtDM(startD)}${endD ? ' → '+fmtDM(endD) : ''}</div>`;
+  }
+
+  return `<div class="tl-wrap">${monthMarks}${todayMark}${barHtml}</div>`;
+}
+
+function renderStats(){
+  const n = PROJECTS.length;
+  const publishing = PROJECTS.filter(p=>p.status==='文章铺设').length;
+  const prePub = PROJECTS.filter(p=>['签约前','确认问题','身份卡生成','身份卡确认','样本确认'].includes(p.status)).length;
+  const monitoring = PROJECTS.filter(p=>p.status==='数据监测').length;
+  const closing = PROJECTS.filter(p=>p.status==='结案报告').length;
+  document.getElementById('stats').innerHTML = `
+    <div class="stat-card"><div class="stat-num">${n}</div><div class="stat-label">进行中项目</div></div>
+    <div class="stat-card"><div class="stat-num">${prePub}</div><div class="stat-label">投放前</div></div>
+    <div class="stat-card"><div class="stat-num">${publishing}</div><div class="stat-label">文章铺设</div></div>
+    <div class="stat-card"><div class="stat-num">${closing}</div><div class="stat-label">待结案</div></div>
+    <div class="stat-card"><div class="stat-num">${monitoring}</div><div class="stat-label">数据监测</div></div>`;
+}
+
+function renderFilters(){
+  const filters = ['全部','投放前','文章铺设','待结案','数据监测'];
+  document.getElementById('filters').innerHTML = filters.map((f,i)=>
+    `<button class="filter-btn ${i===0?'active':''}" onclick="doFilter('${f}',this)">${f}</button>`
+  ).join('');
+}
+
+function doFilter(f, el){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  renderTable(f);
+}
+
+function renderTable(filter){
+  let list = [...PROJECTS];
+  if(filter==='投放前') list = list.filter(p=>['签约前','确认问题','身份卡生成','身份卡确认','样本确认'].includes(p.status));
+  else if(filter==='文章铺设') list = list.filter(p=>p.status==='文章铺设');
+  else if(filter==='待结案') list = list.filter(p=>p.status==='结案报告');
+  else if(filter==='数据监测') list = list.filter(p=>p.status==='数据监测');
+
+  list.sort((a,b)=>{
+    const ai=STATUS_IDX[a.status]||0, bi=STATUS_IDX[b.status]||0;
+    return ai - bi;
+  });
+
+  document.getElementById('projBody').innerHTML = list.map(p=>{
+    const weeks = getTotalWeeks(p.start, p.end);
+    const durLabel = weeks ? `<span style="font-size:11px;color:#9ca3af;margin-left:4px">共${weeks}周</span>` : '';
+    return `<tr>
+    <td class="proj-name">${p.name}${durLabel}</td>
+    <td><span class="proj-status status-${p.status}">${p.status}</span></td>
+    <td>${renderMs(p)}</td>
+    <td>${renderTimeline(p)}</td>
+    <td style="font-size:0.82em;color:#6b7280;max-width:240px">${p.next||'—'}</td>
+  </tr>`;
+  }).join('');
+}
+
+renderStats();
+renderFilters();
+renderTable('全部');
+</script>
+</body>
+</html>
