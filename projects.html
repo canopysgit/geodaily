@@ -80,8 +80,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
 </head>
 <body>
 <div class="nav" style="background:#1e3a5f;padding:10px 24px;display:flex;gap:16px;align-items:center">
-    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.9em;padding:4px 12px;border-radius:8px">GEO监控</a>
+    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.9em;padding:4px 12px;border-radius:8px">每日看板</a>
     <a href="projects.html" style="color:white;text-decoration:none;font-weight:600;font-size:0.9em;padding:4px 12px;border-radius:8px;background:rgba(255,255,255,0.15)">项目总览</a>
+    <a href="https://geoguazi.xiaochaai.com" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.9em;padding:4px 12px;border-radius:8px" target="_blank">瓜子看板</a>
 </div>
 <div class="container">
     <div class="header">
@@ -116,13 +117,6 @@ const MS_STAGES = ['问题确认','身卡发出','身卡确认','样文发出','
 const PROJECTS = [
   {name:"纽特舒玛",status:"文章铺设",start:"2026-05-18",end:"2026-08-17",
    ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:"0518",样文确认:null,文章投放:"0518"},
-   next:"代理发客户方案、客户确认"},
-  {name:"东鹏瓷砖",status:"样本确认",start:"2026-06-01",end:"2026-08-31",
-   ms:{问题确认:"0612",身卡发出:"0602",身卡确认:null,样文发出:"0615",样文确认:null,文章投放:null},
-   partial:["身卡发出"],
-   next:"更新身份卡、客户确认身份卡、客户确认后样文后投放5A文章"},
-  {name:"纽特舒玛",status:"文章铺设",start:"2026-05-18",end:"2026-08-17",
-   ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:"0518",样文确认:null,文章投放:"0518"},
    next:"千问讨论怎么办"},
   {name:"米兰软装",status:"文章铺设",start:"2026-05-18",end:"2026-08-29",
    ms:{问题确认:null,身卡发出:"0520",身卡确认:"0526",样文发出:"0527",样文确认:"0529",文章投放:"0529"},
@@ -145,7 +139,7 @@ const PROJECTS = [
   {name:"东鹏瓷砖",status:"样本确认",start:"2026-06-01",end:"2026-08-31",
    ms:{问题确认:"0612",身卡发出:"0602",身卡确认:null,样文发出:"0615",样文确认:null,文章投放:null},
    partial:["身卡发出"],
-   next:"士豪写样板文章，等客户提供更多资料"},
+   next:"更新身份卡、客户确认身份卡、客户确认后样文后投放5A文章"},
   {name:"玉蕙医院",status:"身份卡确认",start:"2026-06-18",end:"2026-07-26",
    ms:{问题确认:"0618",身卡发出:"0622",身卡确认:null,样文发出:null,样文确认:null,文章投放:null},
    next:"身份卡确认"},
