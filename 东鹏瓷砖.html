@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>东鹏瓷砖 GEO 提及率看板</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+       background: #f0f2f5; color: #1f2937; line-height: 1.6; }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+.header { background: linear-gradient(135deg, #1e3a5f 0%, #2d5986 100%);
+           color: white; padding: 28px 32px; border-radius: 16px; margin-bottom: 24px;
+           display: flex; justify-content: space-between; align-items: center; }
+.header h1 { font-size: 1.5em; }
+.header .sub { opacity: 0.85; font-size: 0.9em; margin-top: 4px; }
+.header .meta { text-align: right; font-size: 0.85em; opacity: 0.8; }
+.kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 24px; }
+.kpi-card { background: white; border-radius: 14px; padding: 20px 24px;
+             box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: center; }
+.kpi-label { font-size: 0.82em; color: #6b7280; margin-bottom: 4px; }
+.kpi-value { font-size: 2em; font-weight: 800; color: #1e3a5f; }
+.kpi-delta { font-size: 0.9em; margin-top: 2px; }
+.kpi-delta.up { color: #10b981; }
+.kpi-delta.down { color: #ef4444; }
+.kpi-delta.flat { color: #9ca3af; }
+.section { background: white; border-radius: 16px; padding: 24px 28px;
+            margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.section-title { font-size: 1.1em; font-weight: 700; color: #1e3a5f;
+                  margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
+table { width: 100%; border-collapse: collapse; }
+th { background: #f1f5f9; padding: 10px 12px; font-weight: 600; text-align: center;
+      font-size: 0.82em; white-space: nowrap; }
+th:first-child { text-align: left; }
+td { padding: 9px 12px; border-bottom: 1px solid #f1f5f9; text-align: center; font-size: 0.9em; }
+td.cw-name { text-align: left; font-weight: 600; color: #374151; }
+td.num { font-variant-numeric: tabular-nums; }
+td.top1 { font-weight: 700; color: #2563eb; }
+td.top3 { font-weight: 700; color: #1e3a5f; }
+td.delta { font-size: 0.85em; }
+td.delta.up { color: #10b981; }
+td.delta.down { color: #ef4444; }
+td.delta.flat { color: #9ca3af; }
+tr:hover { background: #f8fafc; }
+.footer { text-align: center; color: #9ca3af; font-size: 0.8em; margin-top: 24px; padding: 16px; }
+.nav { background: #1e3a5f; padding: 10px 24px; display: flex; gap: 16px; align-items: center; }
+.nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9em;
+          padding: 4px 12px; border-radius: 8px; }
+.nav a.active { color: white; font-weight: 600; background: rgba(255,255,255,0.15); }
+</style>
+</head>
+<body>
+<div class="nav">
+    <a href="../index.html">← 返回总览</a>
+    <a class="active" href="#">东鹏瓷砖</a>
+</div>
+<div class="container">
+    <div class="header">
+        <div>
+            <h1>东鹏瓷砖 GEO 提及率看板</h1>
+            <div class="sub">22个核心词 · 100个监测问题 · 所有平台综合</div>
+        </div>
+        <div class="meta">数据日期<br>2026-07-02</div>
+    </div>
+
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-label">综合 TOP1 提及率</div>
+            <div class="kpi-value">16.9%</div>
+            <div class="kpi-delta up">+1.2pp vs 昨日</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">综合 TOP3 提及率</div>
+            <div class="kpi-value">57.6%</div>
+            <div class="kpi-delta up">+2.7pp vs 昨日</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">核心词维度 · TOP1 & TOP3 提及率（2026-07-02）</div>
+        <table>
+          <thead>
+            <tr>
+              <th>核心词</th>
+              <th>问题数</th>
+              <th>TOP1 提及率</th>
+              <th>环比</th>
+              <th>TOP3 提及率</th>
+              <th>环比</th>
+            </tr>
+          </thead>
+          <tbody>
+        <tr>
+          <td class="cw-name">好瓷砖怎么选</td>
+          <td class="num">4</td>
+          <td class="num top1">6.5%</td>
+          <td class="num delta flat">—</td>
+          <td class="num top3">59.5%</td>
+          <td class="num delta down">-12.5pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">5A瓷砖推荐</td>
+          <td class="num">7</td>
+          <td class="num top1">19.9%</td>
+          <td class="num delta down">-5.4pp</td>
+          <td class="num top3">64.7%</td>
+          <td class="num delta down">-7.0pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">瓷砖品牌怎么选择</td>
+          <td class="num">4</td>
+          <td class="num top1">28.2%</td>
+          <td class="num delta down">-3.2pp</td>
+          <td class="num top3">65.8%</td>
+          <td class="num delta up">+6.2pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">瓷砖选购方法有哪些</td>
+          <td class="num">3</td>
+          <td class="num top1">0.0%</td>
+          <td class="num delta down">-8.7pp</td>
+          <td class="num top3">71.0%</td>
+          <td class="num delta up">+4.0pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">金丝绒瓷砖</td>
+          <td class="num">4</td>
+          <td class="num top1">3.2%</td>
+          <td class="num delta flat">—</td>
+          <td class="num top3">19.2%</td>
+          <td class="num delta up">+9.8pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">木纹砖瓷砖品牌</td>
+          <td class="num">3</td>
+          <td class="num top1">21.0%</td>
+          <td class="num delta up">+12.3pp</td>
+          <td class="num top3">58.7%</td>
+          <td class="num delta up">+4.3pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">莱姆石瓷砖品牌</td>
+          <td class="num">4</td>
+          <td class="num top1">0.0%</td>
+          <td class="num delta flat">—</td>
+          <td class="num top3">3.2%</td>
+          <td class="num delta down">-3.0pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">客厅瓷砖品牌</td>
+          <td class="num">6</td>
+          <td class="num top1">2.2%</td>
+          <td class="num delta flat">—</td>
+          <td class="num top3">42.2%</td>
+          <td class="num delta up">+2.3pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">厨房瓷砖品牌</td>
+          <td class="num">5</td>
+          <td class="num top1">12.6%</td>
+          <td class="num delta down">-2.6pp</td>
+          <td class="num top3">47.8%</td>
+          <td class="num delta down">-12.4pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">卫生间瓷砖品牌</td>
+          <td class="num">6</td>
+          <td class="num top1">12.8%</td>
+          <td class="num delta up">+4.3pp</td>
+          <td class="num top3">75.0%</td>
+          <td class="num delta down">-6.5pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">全屋通铺瓷砖品牌</td>
+          <td class="num">4</td>
+          <td class="num top1">12.8%</td>
+          <td class="num delta flat">—</td>
+          <td class="num top3">59.8%</td>
+          <td class="num delta up">+6.5pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">防滑瓷砖品牌</td>
+          <td class="num">3</td>
+          <td class="num top1">12.7%</td>
+          <td class="num delta up">+4.0pp</td>
+          <td class="num top3">83.7%</td>
+          <td class="num delta up">+25.0pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">防污好打理瓷砖品牌</td>
+          <td class="num">4</td>
+          <td class="num top1">22.2%</td>
+          <td class="num delta up">+9.5pp</td>
+          <td class="num top3">63.0%</td>
+          <td class="num delta down">-2.8pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">耐磨瓷砖品牌</td>
+          <td class="num">3</td>
+          <td class="num top1">8.7%</td>
+          <td class="num delta up">+4.3pp</td>
+          <td class="num top3">54.3%</td>
+          <td class="num delta up">+12.3pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">装修风格瓷砖品牌</td>
+          <td class="num">6</td>
+          <td class="num top1">4.3%</td>
+          <td class="num delta down">-4.3pp</td>
+          <td class="num top3">39.7%</td>
+          <td class="num delta up">+6.0pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">岩板地砖品牌</td>
+          <td class="num">3</td>
+          <td class="num top1">12.7%</td>
+          <td class="num delta up">+8.3pp</td>
+          <td class="num top3">46.3%</td>
+          <td class="num delta up">+8.7pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">柔光砖品牌</td>
+          <td class="num">3</td>
+          <td class="num top1">0.0%</td>
+          <td class="num delta down">-4.3pp</td>
+          <td class="num top3">42.0%</td>
+          <td class="num delta up">+16.7pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">哑光砖品牌</td>
+          <td class="num">5</td>
+          <td class="num top1">12.8%</td>
+          <td class="num delta down">-7.6pp</td>
+          <td class="num top3">63.0%</td>
+          <td class="num delta down">-2.2pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">瓷砖行业地位与动态</td>
+          <td class="num">7</td>
+          <td class="num top1">44.9%</td>
+          <td class="num delta up">+10.7pp</td>
+          <td class="num top3">93.0%</td>
+          <td class="num delta down">-1.7pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name">东鹏瓷砖评价</td>
+          <td class="num">7</td>
+          <td class="num top1">100.0%</td>
+          <td class="num delta up">+1.7pp</td>
+          <td class="num top3">100.0%</td>
+          <td class="num delta flat">—</td>
+        </tr>
+        <tr>
+          <td class="cw-name" style='font-style:italic;color:#9ca3af'>瓷砖品牌排名</td>
+          <td class="num">5</td>
+          <td class="num top1">27.6%</td>
+          <td class="num delta up">+12.2pp</td>
+          <td class="num top3">80.2%</td>
+          <td class="num delta up">+2.4pp</td>
+        </tr>
+        <tr>
+          <td class="cw-name" style='font-style:italic;color:#9ca3af'>高端瓷砖意图</td>
+          <td class="num">4</td>
+          <td class="num top1">3.2%</td>
+          <td class="num delta down">-6.5pp</td>
+          <td class="num top3">34.5%</td>
+          <td class="num delta down">-9.5pp</td>
+        </tr>
+          </tbody>
+        </table>
+    </div>
+
+    <div class="footer">Generated by GEO Dashboard · 爱搜 · 2026-07-02 21:09</div>
+</div>
+</body>
+</html>
