@@ -94,7 +94,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
             <h1>爱搜项目全景看板</h1>
             <div class="sub">所有代运营项目 · 里程碑进度</div>
         </div>
-        <div class="meta">更新时间<br>2026-07-29</div>
+        <div class="meta">更新时间<br>2026-07-30</div>
     </div>
     <div class="stats" id="stats"></div>
     <div class="section">
@@ -119,25 +119,23 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
 const MS_STAGES = ['问题确认','身卡发出','身卡确认','样文发出','样文确认','文章投放'];
 
 const PROJECTS = [
-  {name:"西麦",status:"签约前",start:"2026-05-06",end:"",ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:null},focus:"改密码给客户看数据；生成详细方案推签约",focusType:"null"},
+  {name:"西麦",status:"签约前",start:"2026-05-06",end:"",ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:null},focus:"等客户反馈；官网检测意见待出",focusType:"block"},
   {name:"东鹏瓷砖",status:"文章铺设",start:"2026-06-01",end:"2026-08-31",ms:{问题确认:"0612",身卡发出:"0602",身卡确认:"0625",样文发出:null,样文确认:"0625",文章投放:"0629"},focus:"数据突破",focusType:"breakthrough"},
   {name:"乐班",status:"文章铺设",start:"2026-06-05",end:"2026-09-08",ms:{问题确认:"0529",身卡发出:"0601",身卡确认:"0602",样文发出:"0603",样文确认:"0605",文章投放:"0609"},focus:"多轮对话数据突破",focusType:"breakthrough"},
   {name:"纽特舒玛",status:"文章铺设",start:"2026-05-18",end:"2026-08-17",ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0518"},focus:"千问平台抓取效果差，新换老年人问题效果不佳",focusType:"null"},
   {name:"米兰软装",status:"文章铺设",start:"2026-05-18",end:"2026-08-29",ms:{问题确认:null,身卡发出:"0520",身卡确认:"0526",样文发出:"0527",样文确认:"0529",文章投放:"0529"},focus:"整体方案推进取消",focusType:"null"},
   {name:"申新-知识产权",status:"文章铺设",start:"2026-04-02",end:"2026-05-31",ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0512"},focus:"曲辉明确客户下一步动向",focusType:"null"},
   {name:"职卓",status:"文章铺设",start:"2026-04-22",end:"2026-07-21",ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0512"},focus:"数据分析和数据实习问题突破",focusType:"breakthrough"},
-  {name:"瓜子二手车",status:"样本确认",start:"2026-04-20",end:"2026-08-31",ms:{问题确认:"0605",身卡发出:"0609",身卡确认:"0611",样文发出:"0610",样文确认:"0611",文章投放:"0612"},focus:"客户变动",focusType:"null"},
-  {name:"鲸育宝宝",status:"签约前",start:"2026-05-09",end:"2026-05-31",ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:null},focus:"",focusType:"null"},
-  {name:"轩驹精修汽修",status:"签约前",start:"2026-06-11",end:"2026-07-26",ms:{问题确认:null,身卡发出:"0612",身卡确认:null,样文发出:null,样文确认:null,文章投放:null},focus:"客户下一步动作卡点",focusType:"block"},
+  {name:"瓜子二手车",status:"文章铺设",start:"2026-04-20",end:"2026-08-31",ms:{问题确认:"0605",身卡发出:"0609",身卡确认:"0611",样文发出:"0610",样文确认:"0611",文章投放:"0612"},focus:"客户变动",focusType:"null"},
   {name:"58同城",status:"文章铺设",start:"2026-07-02",end:"2026-07-31",ms:{问题确认:"0702",身卡发出:"0713",身卡确认:"0714",样文发出:"0714",样文确认:"0715",文章投放:null},focus:"样本文章",focusType:"null"},
   {name:"玉蕙医院",status:"文章铺设",start:"2026-06-18",end:"2026-07-26",ms:{问题确认:"0618",身卡发出:"0622",身卡确认:"0625",样文发出:"0625",样文确认:"0629",文章投放:"0630"},focus:"2、3问题DS突破",focusType:"breakthrough"},
   {name:"卡唯朵",status:"文章铺设",start:"2026-06-22",end:"2026-09-27",ms:{问题确认:null,身卡发出:"0623",身卡确认:"0629",样文发出:null,样文确认:"0630",文章投放:"0630"},focus:"正常关注，抖音短视频突破+收录",focusType:"breakthrough"},
-  {name:"壹营养",status:"样本确认",start:"2026-07-16",end:"2026-10-20",ms:{问题确认:"0716",身卡发出:"0716",身卡确认:"0717",样文发出:null,样文确认:"0717",文章投放:"0720"},focus:"确认样本文章",focusType:"breakthrough"},
+  {name:"壹营养",status:"文章铺设",start:"2026-07-16",end:"2026-10-20",ms:{问题确认:"0716",身卡发出:"0716",身卡确认:"0717",样文发出:null,样文确认:"0717",文章投放:"0720"},focus:"确认样本文章",focusType:"breakthrough"},
   {name:"美团医药",status:"确认问题",start:"",end:"",ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:null},focus:"70+词跟进",focusType:"null"},
-  {name:"美团医美",status:"确认问题",start:"",end:"",ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:null},focus:"V3清单100题启动监测",focusType:"null"}
+  {name:"美团医美",status:"确认问题",start:"2026-07-29",end:"",ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:null},focus:"等客户确认43个词+技术讨论",focusType:"breakthrough"}
 ];;
 
-const TODAY = new Date("2026-07-29");
+const TODAY = new Date("2026-07-30");
 
 const STATUS_IDX = {'签约前':0,'确认问题':1,'身份卡生成':2,'身份卡确认':3,
                     '样本确认':4,'文章铺设':5,'结案报告':6,'数据监测':7,
