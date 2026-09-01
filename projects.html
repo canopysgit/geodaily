@@ -94,7 +94,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
             <h1>爱搜项目全景看板</h1>
             <div class="sub">所有代运营项目 · 里程碑进度</div>
         </div>
-        <div class="meta">更新时间<br>2026-08-31</div>
+        <div class="meta">更新时间<br>2026-09-01</div>
     </div>
     <div class="stats" id="stats"></div>
     <div class="section">
@@ -126,7 +126,7 @@ const PROJECTS = [
   {name:"申新-知识产权",status:"文章铺设",start:"2026-04-02",end:"2026-09-11",ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0811"},focus:"欠款纠纷的问题引用率0的突破",focusType:"breakthrough"},
   {name:"瓜子二手车",status:"文章铺设",start:"2026-04-20",end:"2026-08-31",ms:{问题确认:"0605",身卡发出:"0609",身卡确认:"0611",样文发出:"0610",样文确认:"0611",文章投放:"0612"},focus:"1、考核方式需要变更，基础费用+达标费用。 \n2、费用计算公式，模拟8月收费",focusType:"null"},
   {name:"卡唯朵",status:"文章铺设",start:"2026-06-22",end:"2026-09-27",ms:{问题确认:null,身卡发出:"0623",身卡确认:"0629",样文发出:null,样文确认:"0630",文章投放:"0630"},focus:"",focusType:"null"},
-  {name:"壹营养",status:"文章铺设",start:"2026-07-16",end:"2026-10-20",ms:{问题确认:"0716",身卡发出:"0716",身卡确认:"0717",样文发出:null,样文确认:"0717",文章投放:"0720"},focus:"",focusType:"null"},
+  {name:"壹营养",status:"文章铺设",start:"2026-07-16",end:"2026-10-20",ms:{问题确认:"0716",身卡发出:"0716",身卡确认:"0717",样文发出:null,样文确认:"0717",文章投放:"0720"},focus:"想换成2个问题，在豆包、DS做，不再做百度AI",focusType:"null"},
   {name:"美团祛痘",status:"文章铺设",start:"2026-08-10",end:"2026-09-10",ms:{问题确认:"0810",身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0810"},focus:"投放效果，需要决策是否继续做",focusType:"null"},
   {name:"美团美眼",status:"文章铺设",start:"2026-08-10",end:"2026-09-10",ms:{问题确认:"0810",身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0810"},focus:"投放效果，需要决策是否继续做",focusType:"null"},
   {name:"CPB",status:"身份卡确认",start:"2026-08-25",end:"",ms:{问题确认:"0827",身卡发出:"0828",身卡确认:null,样文发出:null,样文确认:null,文章投放:null},focus:"身份卡确认",focusType:"breakthrough"},
@@ -134,14 +134,14 @@ const PROJECTS = [
   {name:"holiday男装",status:"样本撰写",start:"2026-08-17",end:"",ms:{问题确认:"0817",身卡发出:"0821",身卡确认:"0821",样文发出:null,样文确认:null,文章投放:null},focus:"身份卡确认",focusType:"breakthrough"},
   {name:"且慢",status:"文章铺设",start:"2026-08-17",end:"2026-09-17",ms:{问题确认:"0817",身卡发出:"0814",身卡确认:"0817",样文发出:null,样文确认:"0817",文章投放:"0817"},focus:"新手豆包0突破",focusType:"breakthrough"},
   {name:"美团企业版",status:"文章铺设",start:"2026-08-13",end:"2026-09-25",ms:{问题确认:"0813",身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0814"},focus:"换问题",focusType:"null"},
-  {name:"美团-霸王茶姬",status:"确认问题",start:"2026-08-19",end:"2026-09-21",ms:{问题确认:"0819",身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0821"},focus:"重新确认问题",focusType:"breakthrough"},
-  {name:"美团-茶瀑布",status:"确认问题",start:"2026-08-19",end:"2026-09-21",ms:{问题确认:"0819",身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0821"},focus:"重新确认问题",focusType:"breakthrough"},
-  {name:"美团-沪上阿姨",status:"确认问题",start:"2026-08-20",end:"",ms:{问题确认:"0820",身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:null},focus:"重新确认问题",focusType:"breakthrough"},
+  {name:"美团-霸王茶姬",status:"确认问题",start:"2026-08-19",end:"2026-09-21",ms:{问题确认:"0819",身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0821"},focus:"重新确认问题  0828重新摸排",focusType:"breakthrough"},
+  {name:"美团-茶瀑布",status:"确认问题",start:"2026-08-19",end:"2026-09-21",ms:{问题确认:"0819",身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0821"},focus:"重新确认问题 0828重新摸排",focusType:"breakthrough"},
+  {name:"美团-沪上阿姨",status:"确认问题",start:"2026-08-20",end:"",ms:{问题确认:"0820",身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:null},focus:"重新确认问题  0828重新摸排",focusType:"breakthrough"},
   {name:"纽特舒玛（补豆包）",status:"文章铺设",start:"2026-08-05",end:"2026-11-05",ms:{问题确认:null,身卡发出:null,身卡确认:null,样文发出:null,样文确认:null,文章投放:"0518"},focus:"",focusType:"null"},
   {name:"米兰软装（二期）",status:"签约前",start:"",end:"",ms:{问题确认:null,身卡发出:"0520",身卡确认:"0526",样文发出:"0527",样文确认:"0529",文章投放:"0529"},focus:"",focusType:"null"}
 ];;
 
-const TODAY = new Date("2026-08-31");
+const TODAY = new Date("2026-09-01");
 
 const STATUS_IDX = {'签约前':0,'确认问题':1,'身份卡生成':2,'身份卡确认':3,
                     '样本确认':4,'文章铺设':5,'结案报告':6,'数据监测':7,
